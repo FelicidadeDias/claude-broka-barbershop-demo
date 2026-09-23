@@ -12,9 +12,14 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
+
+/* =====================================================
+   VARIÁVEIS
+===================================================== */
 
 :root{
   --black:#050505;
@@ -27,6 +32,10 @@
   --border:rgba(255,255,255,.12);
   --whatsapp:#25d366;
 }
+
+/* =====================================================
+   RESET
+===================================================== */
 
 *{
   margin:0;
@@ -75,6 +84,7 @@ a{
   margin:auto;
 }
 
+
 /* =====================================================
    HEADER
 ===================================================== */
@@ -85,7 +95,7 @@ header{
   left:0;
   width:100%;
   z-index:1000;
-  background:rgba(5,5,5,.88);
+  background:rgba(5,5,5,.90);
   backdrop-filter:blur(16px);
   -webkit-backdrop-filter:blur(16px);
   border-bottom:1px solid var(--border);
@@ -136,7 +146,8 @@ nav a{
   font-size:11px;
   text-transform:uppercase;
   letter-spacing:1px;
-  color:#ccc;
+  color:#d2d2d2;
+  font-weight:600;
   transition:.3s;
 }
 
@@ -148,7 +159,14 @@ nav a:hover{
   padding:11px 18px;
   border:1px solid var(--gold);
   color:var(--gold);
+  font-weight:800;
 }
+
+.nav-button:hover{
+  background:var(--gold);
+  color:#050505;
+}
+
 
 /* =====================================================
    HERO
@@ -160,67 +178,75 @@ nav a:hover{
   display:flex;
   align-items:center;
   overflow:hidden;
-  background:#050505;
-}
-
-.hero-image{
-  position:absolute;
-  right:0;
-  top:0;
-  width:65%;
-  height:100%;
-  z-index:0;
   background:
-    linear-gradient(
-      90deg,
-      #050505 0%,
-      rgba(5,5,5,.9) 13%,
-      rgba(5,5,5,.35) 70%,
-      rgba(5,5,5,.2) 100%
+    radial-gradient(
+      circle at 65% 45%,
+      rgba(201,164,92,.08),
+      transparent 30%
     ),
-    url("cliente.jpg")
-    center/cover no-repeat;
+    #050505;
 }
 
-/* Logótipo integrado no fundo do Hero */
+/*
+   O logótipo fica integrado no fundo da primeira área,
+   atrás do conteúdo principal.
+*/
 
 .hero-secondary-logo{
   position:absolute;
   z-index:1;
-  left:34%;
-  top:50%;
+  left:43%;
+  top:53%;
   transform:translate(-50%,-50%);
-  width:min(38vw,430px);
-  max-height:55vh;
+  width:min(47vw,560px);
+  max-height:72vh;
   object-fit:contain;
-  opacity:.10;
-  filter:grayscale(100%) contrast(1.15);
+  opacity:.13;
+  filter:grayscale(100%) contrast(1.25);
   pointer-events:none;
   user-select:none;
 }
 
+.hero:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:2;
+  pointer-events:none;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(5,5,5,.96) 0%,
+      rgba(5,5,5,.78) 45%,
+      rgba(5,5,5,.30) 75%,
+      rgba(5,5,5,.60) 100%
+    );
+}
+
 .hero-content{
   position:relative;
-  z-index:3;
+  z-index:4;
   padding-top:100px;
-  max-width:700px;
+  max-width:760px;
 }
 
 .kicker{
   color:var(--gold);
   text-transform:uppercase;
   letter-spacing:5px;
-  font-size:11px;
-  font-weight:800;
-  margin-bottom:22px;
+  font-size:12px;
+  font-weight:900;
+  margin-bottom:24px;
+  text-shadow:0 2px 12px rgba(0,0,0,.6);
 }
 
 .hero h1{
   font-family:'Bebas Neue',sans-serif;
-  font-size:clamp(75px,12vw,165px);
-  line-height:.78;
+  font-size:clamp(80px,13vw,175px);
+  line-height:.76;
   letter-spacing:2px;
   text-transform:uppercase;
+  text-shadow:0 8px 30px rgba(0,0,0,.65);
 }
 
 .hero h1 span{
@@ -228,34 +254,37 @@ nav a:hover{
 }
 
 .hero-line{
-  width:100px;
-  height:2px;
+  width:120px;
+  height:3px;
   background:var(--gold);
-  margin:30px 0;
+  margin:32px 0;
+  box-shadow:0 0 18px rgba(201,164,92,.25);
 }
 
 .hero p{
-  color:#c6c6c6;
-  max-width:560px;
+  color:#e0e0e0;
+  max-width:620px;
   font-size:15px;
-  line-height:1.8;
+  line-height:1.85;
+  font-weight:500;
+  text-shadow:0 2px 10px rgba(0,0,0,.8);
 }
 
 .hero-buttons{
   display:flex;
   gap:12px;
-  margin-top:32px;
+  margin-top:34px;
   flex-wrap:wrap;
 }
 
 .btn{
-  min-height:52px;
-  padding:0 24px;
+  min-height:54px;
+  padding:0 26px;
   display:inline-flex;
   align-items:center;
   justify-content:center;
   font-size:11px;
-  font-weight:800;
+  font-weight:900;
   text-transform:uppercase;
   letter-spacing:1px;
   transition:.3s;
@@ -273,7 +302,8 @@ nav a:hover{
 }
 
 .btn-dark{
-  border:1px solid rgba(255,255,255,.3);
+  border:1px solid rgba(255,255,255,.35);
+  background:rgba(0,0,0,.25);
 }
 
 .btn-dark:hover{
@@ -285,13 +315,15 @@ nav a:hover{
   position:absolute;
   right:5%;
   bottom:55px;
-  z-index:4;
+  z-index:5;
   writing-mode:vertical-rl;
-  color:#777;
+  color:#999;
   font-size:10px;
   letter-spacing:4px;
   text-transform:uppercase;
+  font-weight:700;
 }
+
 
 /* =====================================================
    INTRO
@@ -321,22 +353,28 @@ nav a:hover{
 
 .intro-number{
   color:var(--gold);
-  font-size:12px;
+  font-size:13px;
   letter-spacing:3px;
-  margin-bottom:8px;
+  font-weight:900;
+  margin-bottom:10px;
 }
 
 .intro-item h3{
-  font-size:15px;
+  font-size:16px;
   text-transform:uppercase;
   letter-spacing:1px;
+  font-weight:900;
+  color:#fff;
 }
 
 .intro-item p{
-  color:#777;
+  color:#999;
   font-size:12px;
-  margin-top:5px;
+  margin-top:7px;
+  line-height:1.6;
+  font-weight:500;
 }
+
 
 /* =====================================================
    SECTION
@@ -356,10 +394,10 @@ nav a:hover{
 .section-label{
   color:var(--gold);
   text-transform:uppercase;
-  font-size:10px;
+  font-size:11px;
   letter-spacing:4px;
-  font-weight:800;
-  margin-bottom:12px;
+  font-weight:900;
+  margin-bottom:13px;
 }
 
 .section-title{
@@ -367,14 +405,17 @@ nav a:hover{
   font-size:clamp(55px,8vw,100px);
   line-height:.85;
   letter-spacing:1px;
+  text-shadow:0 5px 20px rgba(0,0,0,.35);
 }
 
 .section-description{
-  width:390px;
-  color:#777;
+  width:410px;
+  color:#aaa;
   font-size:13px;
-  line-height:1.8;
+  line-height:1.9;
+  font-weight:500;
 }
+
 
 /* =====================================================
    SERVIÇOS
@@ -395,7 +436,7 @@ nav a:hover{
   position:relative;
   overflow:hidden;
   background:
-    linear-gradient(to top,rgba(0,0,0,.92),rgba(0,0,0,.15)),
+    linear-gradient(to top,rgba(0,0,0,.94),rgba(0,0,0,.15)),
     url("corte completo.jpg")
     center/cover;
 }
@@ -414,11 +455,12 @@ nav a:hover{
 }
 
 .service-main p{
-  color:#bbb;
+  color:#ccc;
   font-size:12px;
   max-width:450px;
   margin-top:12px;
-  line-height:1.7;
+  line-height:1.8;
+  font-weight:500;
 }
 
 .service-list{
@@ -456,19 +498,23 @@ nav a:hover{
   color:var(--gold);
   font-size:10px;
   letter-spacing:2px;
+  font-weight:900;
 }
 
 .service-card h3{
   margin-top:15px;
-  font-size:18px;
+  font-size:19px;
+  font-weight:900;
 }
 
 .service-card p{
-  color:#777;
+  color:#999;
   font-size:11px;
-  margin-top:6px;
-  line-height:1.6;
+  margin-top:7px;
+  line-height:1.7;
+  font-weight:500;
 }
+
 
 /* =====================================================
    CORTES AFRO / AMERICANOS
@@ -523,6 +569,7 @@ nav a:hover{
   letter-spacing:3px;
   text-transform:uppercase;
   margin-bottom:10px;
+  font-weight:900;
 }
 
 .cut-overlay h3{
@@ -532,12 +579,14 @@ nav a:hover{
 }
 
 .cut-overlay p{
-  color:#ccc;
+  color:#ddd;
   font-size:12px;
-  line-height:1.7;
+  line-height:1.8;
   max-width:430px;
   margin-top:12px;
+  font-weight:500;
 }
+
 
 /* =====================================================
    PREÇÁRIO
@@ -575,15 +624,16 @@ nav a:hover{
 
 .price-category-title h3{
   font-family:'Bebas Neue',sans-serif;
-  font-size:38px;
+  font-size:40px;
   letter-spacing:.5px;
 }
 
 .price-category-title span{
   color:var(--gold);
-  font-size:10px;
+  font-size:11px;
   letter-spacing:2px;
   text-transform:uppercase;
+  font-weight:900;
 }
 
 .price-row{
@@ -591,7 +641,7 @@ nav a:hover{
   justify-content:space-between;
   align-items:center;
   gap:20px;
-  padding:16px 0;
+  padding:17px 0;
   border-bottom:1px solid rgba(255,255,255,.07);
 }
 
@@ -600,16 +650,18 @@ nav a:hover{
 }
 
 .price-name{
-  color:#ddd;
-  font-size:12px;
+  color:#eee;
+  font-size:13px;
   line-height:1.5;
+  font-weight:600;
 }
 
 .price{
   color:var(--gold-light);
-  font-size:13px;
-  font-weight:800;
+  font-size:15px;
+  font-weight:900;
   white-space:nowrap;
+  text-shadow:0 0 12px rgba(240,211,138,.12);
 }
 
 .price-note{
@@ -618,6 +670,7 @@ nav a:hover{
   font-size:10px;
   line-height:1.6;
 }
+
 
 /* =====================================================
    SOBRE
@@ -669,7 +722,7 @@ nav a:hover{
 .about-image-box span{
   font-size:10px;
   text-transform:uppercase;
-  font-weight:800;
+  font-weight:900;
   margin-top:12px;
 }
 
@@ -685,10 +738,11 @@ nav a:hover{
 }
 
 .about-text p{
-  color:#858585;
+  color:#999;
   font-size:14px;
   line-height:1.9;
   margin-bottom:15px;
+  font-weight:500;
 }
 
 .about-points{
@@ -699,12 +753,14 @@ nav a:hover{
 }
 
 .about-point{
-  padding:15px;
+  padding:16px;
   background:#101010;
   border-left:2px solid var(--gold);
   font-size:11px;
   text-transform:uppercase;
+  font-weight:800;
 }
+
 
 /* =====================================================
    GALERIA
@@ -757,10 +813,12 @@ nav a:hover{
 }
 
 .gallery-overlay span{
-  font-size:10px;
+  font-size:11px;
   letter-spacing:2px;
   text-transform:uppercase;
+  font-weight:900;
 }
+
 
 /* =====================================================
    FRASE
@@ -795,7 +853,9 @@ nav a:hover{
   font-size:11px;
   letter-spacing:3px;
   text-transform:uppercase;
+  font-weight:800;
 }
+
 
 /* =====================================================
    LOCALIZAÇÃO
@@ -824,9 +884,15 @@ nav a:hover{
 }
 
 .location-card p{
-  color:#777;
+  color:#999;
   font-size:13px;
   line-height:1.8;
+  font-weight:500;
+}
+
+.location-card strong{
+  color:#fff !important;
+  font-weight:900;
 }
 
 .info-row{
@@ -838,17 +904,20 @@ nav a:hover{
 }
 
 .info-row span:first-child{
-  color:#666;
+  color:#777;
   text-transform:uppercase;
   font-size:10px;
   letter-spacing:2px;
+  font-weight:900;
 }
 
 .info-row span:last-child{
-  color:#ddd;
-  font-size:12px;
+  color:#fff;
+  font-size:13px;
   text-align:right;
+  font-weight:800;
 }
+
 
 /* =====================================================
    HORÁRIO
@@ -877,9 +946,10 @@ nav a:hover{
 }
 
 .hours-title p{
-  color:#777;
+  color:#888;
   font-size:12px;
   margin-top:5px;
+  font-weight:600;
 }
 
 .hour-row{
@@ -894,20 +964,22 @@ nav a:hover{
 }
 
 .hour-row span:first-child{
-  color:#aaa;
-  font-size:12px;
+  color:#ccc;
+  font-size:13px;
   text-transform:uppercase;
   letter-spacing:1px;
+  font-weight:700;
 }
 
 .hour-row span:last-child{
   color:var(--gold-light);
-  font-size:12px;
-  font-weight:800;
+  font-size:14px;
+  font-weight:900;
 }
 
+
 /* =====================================================
-   CTA
+   CTA FINAL
 ===================================================== */
 
 .final-cta{
@@ -937,7 +1009,8 @@ nav a:hover{
   color:var(--gold);
   text-transform:uppercase;
   letter-spacing:4px;
-  font-size:10px;
+  font-size:11px;
+  font-weight:900;
 }
 
 .final-content h2{
@@ -950,6 +1023,7 @@ nav a:hover{
 .final-content h2 span{
   color:var(--gold);
 }
+
 
 /* =====================================================
    FOOTER
@@ -978,11 +1052,13 @@ footer{
 }
 
 .footer-text{
-  color:#555;
+  color:#777;
   font-size:10px;
   text-align:right;
   line-height:1.8;
+  font-weight:600;
 }
+
 
 /* =====================================================
    WHATSAPP
@@ -1014,6 +1090,7 @@ footer{
   fill:white;
 }
 
+
 /* =====================================================
    MOBILE
 ===================================================== */
@@ -1024,16 +1101,25 @@ footer{
     display:none;
   }
 
-  .hero-image{
-    width:100%;
-    opacity:.45;
+  .hero{
+    min-height:100vh;
   }
 
   .hero-secondary-logo{
     left:50%;
-    top:48%;
-    width:min(72vw,430px);
+    top:50%;
+    width:min(78vw,500px);
     opacity:.11;
+  }
+
+  .hero:after{
+    background:
+      linear-gradient(
+        90deg,
+        rgba(5,5,5,.96) 0%,
+        rgba(5,5,5,.78) 50%,
+        rgba(5,5,5,.94) 100%
+      );
   }
 
   .hero-content{
@@ -1042,6 +1128,10 @@ footer{
 
   .hero h1{
     font-size:clamp(75px,21vw,120px);
+  }
+
+  .hero p{
+    max-width:620px;
   }
 
   .hero-number{
@@ -1124,6 +1214,11 @@ footer{
 
 }
 
+
+/* =====================================================
+   MOBILE PEQUENO
+===================================================== */
+
 @media(max-width:520px){
 
   .container{
@@ -1149,6 +1244,7 @@ footer{
 
   .hero p{
     font-size:13px;
+    line-height:1.8;
   }
 
   .hero-buttons{
@@ -1226,7 +1322,16 @@ footer{
     font-size:32px;
   }
 
+  .price-name{
+    font-size:12px;
+  }
+
+  .price{
+    font-size:14px;
+  }
+
 }
+
 
 /* =====================================================
    REDUÇÃO DE MOVIMENTO
@@ -1250,7 +1355,9 @@ footer{
 </style>
 </head>
 
+
 <body>
+
 
 <!-- =====================================================
      HEADER
@@ -1273,13 +1380,19 @@ CLAUDE <span>BROKA</span>
 
 </a>
 
+
 <nav>
 
 <a href="#inicio">Início</a>
+
 <a href="#servicos">Serviços</a>
+
 <a href="#cortes">Cortes</a>
+
 <a href="#precos">Preçário</a>
+
 <a href="#galeria">Galeria</a>
+
 <a href="#contacto">Contacto</a>
 
 <a
@@ -1287,7 +1400,9 @@ href="https://wa.me/244933206527?text=Ol%C3%A1%2C%20Claude%20Broka%21%20%F0%9F%9
 target="_blank"
 rel="noopener"
 class="nav-button">
+
 Agendar
+
 </a>
 
 </nav>
@@ -1297,13 +1412,15 @@ Agendar
 </header>
 
 
+
 <!-- =====================================================
      HERO
 ===================================================== -->
 
 <section class="hero" id="inicio">
 
-<div class="hero-image"></div>
+
+<!-- LOGÓTIPO AO FUNDO -->
 
 <img
 src="logotipo secundário.jpg"
@@ -1311,45 +1428,67 @@ alt=""
 aria-hidden="true"
 class="hero-secondary-logo">
 
+
 <div class="hero-number">
 Luanda • Angola
 </div>
+
 
 <div class="container">
 
 <div class="hero-content">
 
+
 <div class="kicker">
 Claude Broka Barbershop
 </div>
 
+
 <h1>
+
 Define<br>
+
 <span>o Teu</span><br>
+
 Estilo
+
 </h1>
+
 
 <div class="hero-line"></div>
 
+
 <p>
+
 Cortamos todo tipo de cabelos e fazemos todo tipo de cortes,
 do mais simples ao mais complicado.
 Aqui deixamos-te na régua, no verdadeiro sentido da palavra.
+
 </p>
 
+
 <div class="hero-buttons">
+
 
 <a
 href="https://wa.me/244933206527?text=Ol%C3%A1%2C%20Claude%20Broka%21%20%F0%9F%91%8B%20Gostaria%20de%20agendar%20um%20atendimento.%20Podem%20informar%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20e%20ajudar-me%20a%20escolher%20o%20melhor%20hor%C3%A1rio%3F%20Quero%20sair%20da%C3%AD%20com%20o%20visual%20na%20r%C3%A9gua%21%20%F0%9F%94%A5"
 target="_blank"
 rel="noopener"
 class="btn btn-gold">
+
 Agendar pelo WhatsApp
+
 </a>
 
-<a href="#precos" class="btn btn-dark">
+
+<a
+href="#precos"
+class="btn btn-dark">
+
 Ver Preçário
+
 </a>
+
 
 </div>
 
@@ -1358,6 +1497,7 @@ Ver Preçário
 </div>
 
 </section>
+
 
 
 <!-- =====================================================
@@ -1370,11 +1510,16 @@ Ver Preçário
 
 <div class="intro-grid">
 
+
 <div class="intro-item">
 
-<div class="intro-number">01</div>
+<div class="intro-number">
+01
+</div>
 
-<h3>Cortes Afro</h3>
+<h3>
+Cortes Afro
+</h3>
 
 <p>
 Estilo, criatividade e precisão.
@@ -1382,11 +1527,16 @@ Estilo, criatividade e precisão.
 
 </div>
 
+
 <div class="intro-item">
 
-<div class="intro-number">02</div>
+<div class="intro-number">
+02
+</div>
 
-<h3>Cortes Americanos</h3>
+<h3>
+Cortes Americanos
+</h3>
 
 <p>
 Acabamentos modernos e marcantes.
@@ -1394,11 +1544,16 @@ Acabamentos modernos e marcantes.
 
 </div>
 
+
 <div class="intro-item">
 
-<div class="intro-number">03</div>
+<div class="intro-number">
+03
+</div>
 
-<h3>Na Régua</h3>
+<h3>
+Na Régua
+</h3>
 
 <p>
 Detalhes que fazem a diferença.
@@ -1406,11 +1561,13 @@ Detalhes que fazem a diferença.
 
 </div>
 
+
 </div>
 
 </div>
 
 </section>
+
 
 
 <!-- =====================================================
@@ -1420,6 +1577,7 @@ Detalhes que fazem a diferença.
 <section class="section services" id="servicos">
 
 <div class="container">
+
 
 <div class="section-header">
 
@@ -1435,41 +1593,54 @@ O teu<br>estilo.
 
 </div>
 
+
 <p class="section-description">
+
 Do corte à barba, da laminagem à pintura,
 a Claude Broka oferece diferentes serviços
 para completar o teu visual.
+
 </p>
 
 </div>
 
 
+
 <div class="service-layout">
+
 
 <div class="service-main">
 
 <div class="service-main-content">
 
+
 <div class="section-label">
 01 / Destaque
 </div>
+
 
 <h3>
 Corte<br>
 Masculino
 </h3>
 
+
 <p>
+
 Cortes afro, cortes americanos e diversos
 acabamentos para deixar-te na régua.
+
 </p>
 
+
 </div>
 
 </div>
+
 
 
 <div class="service-list">
+
 
 <div class="service-card">
 
@@ -1482,11 +1653,14 @@ Barba
 </h3>
 
 <p>
+
 Depilador, máquina, gellete, pintura
 e combinações completas.
+
 </p>
 
 </div>
+
 
 
 <div class="service-card">
@@ -1500,11 +1674,14 @@ Laminagem
 </h3>
 
 <p>
+
 Laminagem e laminagem com barba
 para um acabamento definido.
+
 </p>
 
 </div>
+
 
 
 <div class="service-card">
@@ -1518,11 +1695,14 @@ Pinturas
 </h3>
 
 <p>
+
 Pintura preta e loira para cabelos
 curtos, médios e longos.
+
 </p>
 
 </div>
+
 
 </div>
 
@@ -1533,6 +1713,7 @@ curtos, médios e longos.
 </section>
 
 
+
 <!-- =====================================================
      CORTES
 ===================================================== -->
@@ -1540,6 +1721,7 @@ curtos, médios e longos.
 <section class="section cut-types" id="cortes">
 
 <div class="container">
+
 
 <div class="section-header">
 
@@ -1555,16 +1737,21 @@ Afro &<br>Americanos.
 
 </div>
 
+
 <p class="section-description">
+
 Organizamos os principais estilos em duas
 categorias para facilitar a escolha do
 cliente antes de chegar à cadeira.
+
 </p>
 
 </div>
 
 
+
 <div class="cut-grid">
+
 
 <div class="cut-card">
 
@@ -1573,25 +1760,32 @@ src="corte.jpg"
 alt="Cortes afro na Claude Broka Barbershop"
 loading="lazy">
 
+
 <div class="cut-overlay">
 
 <div class="cut-number">
 01 / Afro
 </div>
 
+
 <h3>
-Cortes<br>Afro
+Cortes<br>
+Afro
 </h3>
 
+
 <p>
+
 Cortes afro com personalidade, criatividade
 e acabamento preciso. Do simples ao mais
 elaborado.
+
 </p>
 
 </div>
 
 </div>
+
 
 
 <div class="cut-card">
@@ -1601,31 +1795,39 @@ src="corte1.jpg"
 alt="Cortes americanos na Claude Broka Barbershop"
 loading="lazy">
 
+
 <div class="cut-overlay">
 
 <div class="cut-number">
 02 / Americanos
 </div>
 
+
 <h3>
-Cortes<br>Americanos
+Cortes<br>
+Americanos
 </h3>
 
+
 <p>
+
 Estilos modernos, linhas definidas e
 acabamentos inspirados na barbearia
 americana.
+
 </p>
 
 </div>
 
 </div>
 
+
 </div>
 
 </div>
 
 </section>
+
 
 
 <!-- =====================================================
@@ -1636,6 +1838,7 @@ americana.
 
 <div class="container">
 
+
 <div class="section-header">
 
 <div>
@@ -1645,225 +1848,492 @@ americana.
 </div>
 
 <h2 class="section-title">
-Escolhe<br>o serviço.
+Escolhe<br>
+o serviço.
 </h2>
 
 </div>
 
-<p class="section-description">
-Todos os valores apresentados estão em
-Kwanza Angolano (Kz).
-</p>
-
 </div>
+
 
 
 <div class="price-categories">
 
-<div class="price-category">
 
-<div class="price-category-title">
-<h3>Barba</h3>
-<span>01</span>
-</div>
-
-<div class="price-row">
-<span class="price-name">Com depilador</span>
-<span class="price">3.000 Kz</span>
-</div>
-
-<div class="price-row">
-<span class="price-name">Com máquina</span>
-<span class="price">2.000 Kz</span>
-</div>
-
-<div class="price-row">
-<span class="price-name">Com gellete</span>
-<span class="price">3.000 Kz</span>
-</div>
-
-<div class="price-row">
-<span class="price-name">Com pintura</span>
-<span class="price">2.500 Kz</span>
-</div>
-
-<div class="price-row">
-<span class="price-name">Com pintura + desfriso</span>
-<span class="price">4.000 Kz</span>
-</div>
-
-</div>
-
+<!-- BARBA -->
 
 <div class="price-category">
 
 <div class="price-category-title">
-<h3>Criança</h3>
-<span>02</span>
+
+<h3>
+Barba
+</h3>
+
+<span>
+01
+</span>
+
 </div>
+
 
 <div class="price-row">
-<span class="price-name">Corte</span>
-<span class="price">2.000 Kz</span>
+<span class="price-name">
+Com depilador
+</span>
+
+<span class="price">
+3.000 Kz
+</span>
 </div>
+
 
 <div class="price-row">
-<span class="price-name">Corte com grafite</span>
-<span class="price">3.000 Kz</span>
+<span class="price-name">
+Com máquina
+</span>
+
+<span class="price">
+2.000 Kz
+</span>
 </div>
+
 
 <div class="price-row">
-<span class="price-name">Corte + pintura</span>
-<span class="price">4.000 Kz</span>
+<span class="price-name">
+Com gellete
+</span>
+
+<span class="price">
+3.000 Kz
+</span>
+</div>
+
+
+<div class="price-row">
+<span class="price-name">
+Com pintura
+</span>
+
+<span class="price">
+2.500 Kz
+</span>
+</div>
+
+
+<div class="price-row">
+<span class="price-name">
+Com pintura + desfriso
+</span>
+
+<span class="price">
+4.000 Kz
+</span>
 </div>
 
 </div>
 
+
+
+<!-- CRIANÇA -->
+
+<div class="price-category">
+
+<div class="price-category-title">
+
+<h3>
+Criança
+</h3>
+
+<span>
+02
+</span>
+
+</div>
+
+
+<div class="price-row">
+
+<span class="price-name">
+Corte
+</span>
+
+<span class="price">
+2.000 Kz
+</span>
+
+</div>
+
+
+<div class="price-row">
+
+<span class="price-name">
+Corte com grafite
+</span>
+
+<span class="price">
+3.000 Kz
+</span>
+
+</div>
+
+
+<div class="price-row">
+
+<span class="price-name">
+Corte + pintura
+</span>
+
+<span class="price">
+4.000 Kz
+</span>
+
+</div>
+
+</div>
+
+
+
+<!-- ADULTO -->
 
 <div class="price-category full">
 
 <div class="price-category-title">
-<h3>Adulto</h3>
-<span>03</span>
+
+<h3>
+Adulto
+</h3>
+
+<span>
+03
+</span>
+
 </div>
+
 
 <div class="price-row">
-<span class="price-name">Corte</span>
-<span class="price">3.000 Kz</span>
+
+<span class="price-name">
+Corte
+</span>
+
+<span class="price">
+3.000 Kz
+</span>
+
 </div>
+
 
 <div class="price-row">
-<span class="price-name">Careca</span>
-<span class="price">3.000 Kz</span>
+
+<span class="price-name">
+Careca
+</span>
+
+<span class="price">
+3.000 Kz
+</span>
+
 </div>
+
 
 <div class="price-row">
-<span class="price-name">Corte e barba</span>
-<span class="price">4.000 Kz</span>
+
+<span class="price-name">
+Corte e barba
+</span>
+
+<span class="price">
+4.000 Kz
+</span>
+
 </div>
+
 
 <div class="price-row">
-<span class="price-name">Careca com depilador</span>
-<span class="price">8.000 Kz</span>
+
+<span class="price-name">
+Careca com depilador
+</span>
+
+<span class="price">
+8.000 Kz
+</span>
+
 </div>
+
 
 <div class="price-row">
-<span class="price-name">Corte, barba e pintura na barba</span>
-<span class="price">5.000 Kz</span>
+
+<span class="price-name">
+Corte, barba e pintura na barba
+</span>
+
+<span class="price">
+5.000 Kz
+</span>
+
 </div>
+
 
 <div class="price-row">
-<span class="price-name">Corte, barba e desfriso na barba</span>
-<span class="price">5.000 Kz</span>
+
+<span class="price-name">
+Corte, barba e desfriso na barba
+</span>
+
+<span class="price">
+5.000 Kz
+</span>
+
 </div>
+
 
 <div class="price-row">
-<span class="price-name">Corte, barba, desfriso e pintura na barba</span>
-<span class="price">6.000 Kz</span>
+
+<span class="price-name">
+Corte, barba, desfriso e pintura na barba
+</span>
+
+<span class="price">
+6.000 Kz
+</span>
+
 </div>
+
 
 <div class="price-row">
-<span class="price-name">Corte, barba e pintura preta</span>
-<span class="price">5.000 Kz</span>
+
+<span class="price-name">
+Corte, barba e pintura preta
+</span>
+
+<span class="price">
+5.000 Kz
+</span>
+
 </div>
+
 
 <div class="price-row">
-<span class="price-name">Corte, barba, desfriso e pintura preta</span>
-<span class="price">6.000 Kz</span>
-</div>
+
+<span class="price-name">
+Corte, barba, desfriso e pintura preta
+</span>
+
+<span class="price">
+6.000 Kz
+</span>
 
 </div>
 
+</div>
+
+
+
+<!-- LINE UP -->
 
 <div class="price-category">
 
 <div class="price-category-title">
-<h3>Line Up</h3>
-<span>04</span>
+
+<h3>
+Line Up
+</h3>
+
+<span>
+04
+</span>
+
 </div>
+
 
 <div class="price-row">
-<span class="price-name">Laminagem</span>
-<span class="price">2.000 Kz</span>
+
+<span class="price-name">
+Laminagem
+</span>
+
+<span class="price">
+2.000 Kz
+</span>
+
 </div>
+
 
 <div class="price-row">
-<span class="price-name">Laminagem e barba</span>
-<span class="price">2.500 Kz</span>
-</div>
+
+<span class="price-name">
+Laminagem e barba
+</span>
+
+<span class="price">
+2.500 Kz
+</span>
 
 </div>
 
+</div>
+
+
+
+<!-- SOBRANCELHAS -->
 
 <div class="price-category">
 
 <div class="price-category-title">
-<h3>Sobrancelhas</h3>
-<span>05</span>
+
+<h3>
+Sobrancelhas
+</h3>
+
+<span>
+05
+</span>
+
 </div>
+
 
 <div class="price-row">
-<span class="price-name">Com e sem pintura</span>
-<span class="price">2.000 Kz</span>
-</div>
+
+<span class="price-name">
+Com e sem pintura
+</span>
+
+<span class="price">
+2.000 Kz
+</span>
 
 </div>
 
+</div>
+
+
+
+<!-- PINTURA PRETA -->
 
 <div class="price-category">
 
 <div class="price-category-title">
-<h3>Pintura Preta</h3>
-<span>06</span>
+
+<h3>
+Pintura Preta
+</h3>
+
+<span>
+06
+</span>
+
 </div>
+
 
 <div class="price-row">
-<span class="price-name">Cabelos curtos</span>
-<span class="price">2.000 Kz</span>
+
+<span class="price-name">
+Cabelos curtos
+</span>
+
+<span class="price">
+2.000 Kz
+</span>
+
 </div>
+
 
 <div class="price-row">
-<span class="price-name">Cabelos médios</span>
-<span class="price">4.000 Kz</span>
+
+<span class="price-name">
+Cabelos médios
+</span>
+
+<span class="price">
+4.000 Kz
+</span>
+
 </div>
+
 
 <div class="price-row">
-<span class="price-name">Cabelos longos</span>
-<span class="price">8.000 Kz</span>
-</div>
+
+<span class="price-name">
+Cabelos longos
+</span>
+
+<span class="price">
+8.000 Kz
+</span>
 
 </div>
 
+</div>
+
+
+
+<!-- PINTURA LOIRA -->
 
 <div class="price-category">
 
 <div class="price-category-title">
-<h3>Pintura Loira</h3>
-<span>07</span>
+
+<h3>
+Pintura Loira
+</h3>
+
+<span>
+07
+</span>
+
 </div>
+
 
 <div class="price-row">
-<span class="price-name">Cabelos curtos</span>
-<span class="price">10.000 Kz</span>
+
+<span class="price-name">
+Cabelos curtos
+</span>
+
+<span class="price">
+10.000 Kz
+</span>
+
 </div>
+
 
 <div class="price-row">
-<span class="price-name">Cabelos médios</span>
-<span class="price">20.000 Kz</span>
+
+<span class="price-name">
+Cabelos médios
+</span>
+
+<span class="price">
+20.000 Kz
+</span>
+
 </div>
+
 
 <div class="price-row">
-<span class="price-name">Cabelos longos</span>
-<span class="price">30.000 Kz</span>
+
+<span class="price-name">
+Cabelos longos
+</span>
+
+<span class="price">
+30.000 Kz
+</span>
+
 </div>
 
 </div>
+
 
 </div>
 
 </div>
 
 </section>
+
 
 
 <!-- =====================================================
@@ -1874,7 +2344,9 @@ Kwanza Angolano (Kz).
 
 <div class="container">
 
+
 <div class="about-grid">
+
 
 <div class="about-image">
 
@@ -1883,9 +2355,12 @@ src="cliente1.jpg"
 alt="Cliente da Claude Broka Barbershop"
 loading="lazy">
 
+
 <div class="about-image-box">
 
-<strong>CB</strong>
+<strong>
+CB
+</strong>
 
 <span>
 Claude Broka
@@ -1896,50 +2371,71 @@ Claude Broka
 </div>
 
 
+
 <div class="about-text">
 
 <div class="section-label">
 04 — A nossa essência
 </div>
 
+
 <div class="big">
+
 Não é apenas<br>
+
 um <span>corte.</span>
+
 </div>
 
-<p>
-Na Claude Broka Barbershop, cada corte é pensado
-para valorizar o teu estilo e a tua personalidade.
-</p>
 
 <p>
+
+Na Claude Broka Barbershop, cada corte é pensado
+para valorizar o teu estilo e a tua personalidade.
+
+</p>
+
+
+<p>
+
 Trabalhamos com diferentes tipos de cabelos e
 diferentes estilos de corte, desde os mais simples
 até aos mais elaborados.
+
 </p>
+
 
 <p>
+
 Aqui, o objetivo é simples: fazer com que saias
 da cadeira com confiança e com o visual na régua.
+
 </p>
 
+
+
 <div class="about-points">
+
 
 <div class="about-point">
 ✦ Cortes Afro
 </div>
 
+
 <div class="about-point">
 ✦ Cortes Americanos
 </div>
+
 
 <div class="about-point">
 ✦ Barba
 </div>
 
+
 <div class="about-point">
 ✦ Pintura
 </div>
+
 
 </div>
 
@@ -1950,6 +2446,7 @@ da cadeira com confiança e com o visual na régua.
 </div>
 
 </section>
+
 
 
 <!-- =====================================================
@@ -1960,6 +2457,7 @@ da cadeira com confiança e com o visual na régua.
 
 <div class="container">
 
+
 <div class="section-header">
 
 <div>
@@ -1968,23 +2466,30 @@ da cadeira com confiança e com o visual na régua.
 06 — Galeria
 </div>
 
+
 <h2 class="section-title">
-O<br>Visual.
+O<br>
+Visual.
 </h2>
 
 </div>
 
+
 <p class="section-description">
+
 Inspira-te em alguns dos nossos cortes,
 acabamentos e transformações. Cada trabalho
 é feito com atenção ao detalhe para deixar
 o teu visual na régua.
+
 </p>
 
 </div>
 
 
+
 <div class="gallery-grid">
+
 
 <div class="gallery-item">
 
@@ -1993,11 +2498,17 @@ src="cliente2.jpg"
 alt="Visual de cliente da Claude Broka Barbershop"
 loading="lazy">
 
+
 <div class="gallery-overlay">
-<span>Visual na Régua</span>
+
+<span>
+Visual na Régua
+</span>
+
 </div>
 
 </div>
+
 
 
 <div class="gallery-item">
@@ -2007,25 +2518,37 @@ src="cliente3.jpg"
 alt="Corte com precisão na Claude Broka Barbershop"
 loading="lazy">
 
+
 <div class="gallery-overlay">
-<span>Corte com Precisão</span>
+
+<span>
+Corte com Precisão
+</span>
+
 </div>
 
 </div>
+
 
 
 <div class="gallery-item">
 
 <img
-src="cliente4.jpg"
+src="cliente.jpg"
 alt="Estilo masculino na Claude Broka Barbershop"
 loading="lazy">
 
+
 <div class="gallery-overlay">
-<span>Estilo & Presença</span>
+
+<span>
+Estilo & Presença
+</span>
+
 </div>
 
 </div>
+
 
 
 <div class="gallery-item">
@@ -2035,11 +2558,17 @@ src="corte completo1.jpg"
 alt="Corte completo na Claude Broka Barbershop"
 loading="lazy">
 
+
 <div class="gallery-overlay">
-<span>Corte Completo</span>
+
+<span>
+Corte Completo
+</span>
+
 </div>
 
 </div>
+
 
 
 <div class="gallery-item">
@@ -2049,17 +2578,24 @@ src="barba.jpg"
 alt="Barba definida na Claude Broka Barbershop"
 loading="lazy">
 
+
 <div class="gallery-overlay">
-<span>Barba Definida</span>
+
+<span>
+Barba Definida
+</span>
+
 </div>
 
 </div>
+
 
 </div>
 
 </div>
 
 </section>
+
 
 
 <!-- =====================================================
@@ -2070,6 +2606,7 @@ loading="lazy">
 
 <div class="container">
 
+
 <div class="section-header">
 
 <div>
@@ -2078,22 +2615,29 @@ loading="lazy">
 07 — Acabamentos
 </div>
 
+
 <h2 class="section-title">
-Detalhes<br>na régua.
+Detalhes<br>
+na régua.
 </h2>
 
 </div>
 
+
 <p class="section-description">
+
 Do primeiro detalhe ao acabamento final,
 cada serviço é pensado para completar
 o teu visual e reforçar a tua presença.
+
 </p>
 
 </div>
 
 
+
 <div class="gallery-grid">
+
 
 <div class="gallery-item">
 
@@ -2102,11 +2646,17 @@ src="pintura.jpg"
 alt="Pintura de cabelo e barba na Claude Broka Barbershop"
 loading="lazy">
 
+
 <div class="gallery-overlay">
-<span>Pintura</span>
+
+<span>
+Pintura
+</span>
+
 </div>
 
 </div>
+
 
 
 <div class="gallery-item">
@@ -2116,11 +2666,17 @@ src="laminagem.jpg"
 alt="Laminagem na Claude Broka Barbershop"
 loading="lazy">
 
+
 <div class="gallery-overlay">
-<span>Laminagem</span>
+
+<span>
+Laminagem
+</span>
+
 </div>
 
 </div>
+
 
 
 <div class="gallery-item">
@@ -2130,11 +2686,17 @@ src="laminagem1.jpg"
 alt="Line Up e acabamento na Claude Broka Barbershop"
 loading="lazy">
 
+
 <div class="gallery-overlay">
-<span>Line Up</span>
+
+<span>
+Line Up
+</span>
+
 </div>
 
 </div>
+
 
 
 <div class="gallery-item">
@@ -2144,11 +2706,17 @@ src="corte completo.jpg"
 alt="Corte completo na Claude Broka Barbershop"
 loading="lazy">
 
+
 <div class="gallery-overlay">
-<span>Corte Completo</span>
+
+<span>
+Corte Completo
+</span>
+
 </div>
 
 </div>
+
 
 
 <div class="gallery-item">
@@ -2158,17 +2726,24 @@ src="cliente5.jpg"
 alt="Resultado final de cliente da Claude Broka Barbershop"
 loading="lazy">
 
+
 <div class="gallery-overlay">
-<span>Resultado Final</span>
+
+<span>
+Resultado Final
+</span>
+
 </div>
 
 </div>
+
 
 </div>
 
 </div>
 
 </section>
+
 
 
 <!-- =====================================================
@@ -2179,22 +2754,29 @@ loading="lazy">
 
 <div class="container">
 
+
 <div class="quote-mark">
 “
 </div>
 
+
 <h2>
+
 Aqui deixamos-te na régua,
 no verdadeiro sentido da palavra.
+
 </h2>
+
 
 <p>
 Claude Broka Barbershop • Luanda
 </p>
 
+
 </div>
 
 </section>
+
 
 
 <!-- =====================================================
@@ -2205,7 +2787,9 @@ Claude Broka Barbershop • Luanda
 
 <div class="container">
 
+
 <div class="hours-box">
+
 
 <div class="hours-title">
 
@@ -2213,9 +2797,11 @@ Claude Broka Barbershop • Luanda
 08 — Funcionamento
 </div>
 
+
 <h3>
 Estamos à tua espera.
 </h3>
+
 
 <p>
 De segunda a domingo, das 08h às 20h.
@@ -2225,45 +2811,102 @@ De segunda a domingo, das 08h às 20h.
 
 
 <div class="hour-row">
-<span>Segunda-feira</span>
-<span>08:00 — 20:00</span>
+
+<span>
+Segunda-feira
+</span>
+
+<span>
+08:00 — 20:00
+</span>
+
 </div>
 
-<div class="hour-row">
-<span>Terça-feira</span>
-<span>08:00 — 20:00</span>
-</div>
 
 <div class="hour-row">
-<span>Quarta-feira</span>
-<span>08:00 — 20:00</span>
+
+<span>
+Terça-feira
+</span>
+
+<span>
+08:00 — 20:00
+</span>
+
 </div>
 
-<div class="hour-row">
-<span>Quinta-feira</span>
-<span>08:00 — 20:00</span>
-</div>
 
 <div class="hour-row">
-<span>Sexta-feira</span>
-<span>08:00 — 20:00</span>
+
+<span>
+Quarta-feira
+</span>
+
+<span>
+08:00 — 20:00
+</span>
+
 </div>
 
-<div class="hour-row">
-<span>Sábado</span>
-<span>08:00 — 20:00</span>
-</div>
 
 <div class="hour-row">
-<span>Domingo</span>
-<span>08:00 — 20:00</span>
+
+<span>
+Quinta-feira
+</span>
+
+<span>
+08:00 — 20:00
+</span>
+
 </div>
+
+
+<div class="hour-row">
+
+<span>
+Sexta-feira
+</span>
+
+<span>
+08:00 — 20:00
+</span>
+
+</div>
+
+
+<div class="hour-row">
+
+<span>
+Sábado
+</span>
+
+<span>
+08:00 — 20:00
+</span>
+
+</div>
+
+
+<div class="hour-row">
+
+<span>
+Domingo
+</span>
+
+<span>
+08:00 — 20:00
+</span>
+
+</div>
+
 
 </div>
 
 </div>
 
 </section>
+
 
 
 <!-- =====================================================
@@ -2274,6 +2917,7 @@ De segunda a domingo, das 08h às 20h.
 
 <div class="container">
 
+
 <div class="section-header">
 
 <div>
@@ -2282,19 +2926,25 @@ De segunda a domingo, das 08h às 20h.
 09 — Visita-nos
 </div>
 
+
 <h2 class="section-title">
-Encontra<br>o teu lugar.
+Encontra<br>
+o teu lugar.
 </h2>
 
 </div>
 
+
 <p class="section-description">
+
 Estamos na Avenida Deolinda Rodrigues.
 Para marcações e informações, fala diretamente
 connosco pelo WhatsApp.
+
 </p>
 
 </div>
+
 
 
 <div class="location-grid">
@@ -2302,46 +2952,63 @@ connosco pelo WhatsApp.
 
 <div class="location-card">
 
+
 <h3>
 Localização
 </h3>
 
+
 <p>
-<strong style="color:#ddd;">
+
+<strong>
 Avenida Deolinda Rodrigues
 </strong>
+
 </p>
+
 
 <p>
 Rua dos Serviços, antes do supermercado Jumbo.
 </p>
 
+
 <p style="margin-top:15px;">
 Luanda, Angola
 </p>
 
+
 <br>
+
 
 <a
 href="https://www.google.com/maps/search/?api=1&query=Avenida%20Deolinda%20Rodrigues%20Rua%20dos%20Servi%C3%A7os%20Jumbo%20Luanda"
 target="_blank"
 rel="noopener"
 class="btn btn-dark">
+
 Abrir no Google Maps
+
 </a>
+
 
 </div>
 
 
+
 <div class="location-card">
+
 
 <h3>
 Contacto
 </h3>
 
+
+
 <div class="info-row">
 
-<span>WhatsApp</span>
+<span>
+WhatsApp
+</span>
 
 <span>
 +244 933 206 527
@@ -2350,9 +3017,12 @@ Contacto
 </div>
 
 
+
 <div class="info-row">
 
-<span>Funcionamento</span>
+<span>
+Funcionamento
+</span>
 
 <span>
 Segunda a Domingo
@@ -2361,9 +3031,12 @@ Segunda a Domingo
 </div>
 
 
+
 <div class="info-row">
 
-<span>Horário</span>
+<span>
+Horário
+</span>
 
 <span>
 08:00 — 20:00
@@ -2372,25 +3045,33 @@ Segunda a Domingo
 </div>
 
 
+
 <div style="margin-top:25px;">
+
 
 <a
 href="https://wa.me/244933206527?text=Ol%C3%A1%2C%20Claude%20Broka%21%20%F0%9F%91%8B%20Gostaria%20de%20agendar%20um%20atendimento.%20Podem%20informar%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20e%20ajudar-me%20a%20escolher%20o%20melhor%20hor%C3%A1rio%3F%20Quero%20sair%20da%C3%AD%20com%20o%20visual%20na%20r%C3%A9gua%21%20%F0%9F%94%A5"
 target="_blank"
 rel="noopener"
 class="btn btn-gold">
+
 Falar no WhatsApp
+
 </a>
 
-</div>
 
 </div>
+
+
+</div>
+
 
 </div>
 
 </div>
 
 </section>
+
 
 
 <!-- =====================================================
@@ -2401,26 +3082,36 @@ Falar no WhatsApp
 
 <div class="container final-content">
 
+
 <div class="small">
 Claude Broka Barbershop
 </div>
 
+
 <h2>
+
 Marca<br>
+
 <span>agora.</span>
+
 </h2>
+
 
 <a
 href="https://wa.me/244933206527?text=Ol%C3%A1%2C%20Claude%20Broka%21%20%F0%9F%91%8B%20Quero%20marcar%20o%20meu%20atendimento.%20Podem%20enviar-me%20os%20hor%C3%A1rios%20dispon%C3%ADveis%3F%20Quero%20reservar%20o%20meu%20lugar%20e%20deixar%20o%20visual%20na%20r%C3%A9gua%21%20%F0%9F%94%A5"
 target="_blank"
 rel="noopener"
 class="btn btn-gold">
+
 Agendar pelo WhatsApp
+
 </a>
+
 
 </div>
 
 </section>
+
 
 
 <!-- =====================================================
@@ -2431,26 +3122,35 @@ Agendar pelo WhatsApp
 
 <div class="container footer-grid">
 
+
 <div class="footer-brand">
+
 CLAUDE <span>BROKA</span>
+
 </div>
+
 
 <div class="footer-text">
 
 Claude Broka Barbershop • Luanda, Angola<br>
+
 Avenida Deolinda Rodrigues • Rua dos Serviços<br>
+
 +244 933 206 527<br>
+
 © 2026 Claude Broka Barbershop
 
 </div>
+
 
 </div>
 
 </footer>
 
 
+
 <!-- =====================================================
-     WHATSAPP
+     WHATSAPP FLUTUANTE
 ===================================================== -->
 
 <a
@@ -2461,13 +3161,17 @@ class="whatsapp"
 aria-label="Falar com Claude Broka pelo WhatsApp"
 title="Falar com Claude Broka pelo WhatsApp">
 
-<svg viewBox="0 0 24 24" aria-hidden="true">
+
+<svg
+viewBox="0 0 24 24"
+aria-hidden="true">
 
 <path d="M20.52 3.48A11.86 11.86 0 0 0 12.06 0C5.5 0 .16 5.34.16 11.9c0 2.1.55 4.15 1.6 5.96L.05 24l6.28-1.65a11.9 11.9 0 0 0 5.73 1.46h.01c6.55 0 11.89-5.34 11.89-11.9 0-3.18-1.24-6.17-3.44-8.43ZM12.06 21.8h-.01a9.88 9.88 0 0 1-5.03-1.38l-.36-.21-3.73.98.99-3.64-.23-.37a9.87 9.87 0 0 1-1.51-5.28C2.18 6.45 6.61 2.02 12.07 2.02c2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 7c0 5.45-4.43 9.88-9.89 9.88Zm5.42-7.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.74-1.64-2.04-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.21 5.09 4.5.71.31 1.26.49 1.69.63.71.23 1.35.2 1.86.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35Z"/>
 
 </svg>
 
 </a>
+
 
 </body>
 </html>
