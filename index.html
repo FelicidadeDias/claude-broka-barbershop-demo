@@ -4,9 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Claude Broka | Barbershop</title>
+<title>Claude Broka Barbershop | Luanda</title>
 
-<meta name="description" content="Claude Broka Barbershop — estilo, precisão e atitude em Luanda.">
+<meta name="description" content="Claude Broka Barbershop — cortes afro, cortes americanos, barba, pintura, laminagem e muito mais em Luanda. Avenida Deolinda Rodrigues.">
+<meta name="keywords" content="Claude Broka Barbershop, barbearia Luanda, cortes afro, cortes americanos, barba, laminagem, pintura, corte masculino">
 <meta name="theme-color" content="#080808">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,6 +25,7 @@
   --white:#fff;
   --gray:#9a9a9a;
   --border:rgba(255,255,255,.12);
+  --whatsapp:#25d366;
 }
 
 *{
@@ -43,6 +45,16 @@ body{
   overflow-x:hidden;
 }
 
+body:before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  opacity:.025;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+  z-index:9999;
+}
+
 a{
   color:inherit;
   text-decoration:none;
@@ -53,28 +65,19 @@ img{
   display:block;
 }
 
+button,
+a{
+  -webkit-tap-highlight-color:transparent;
+}
+
 .container{
   width:min(1180px,92%);
   margin:auto;
 }
 
-/* =========================
-   TEXTURA
-========================= */
-
-body:before{
-  content:"";
-  position:fixed;
-  inset:0;
-  pointer-events:none;
-  opacity:.035;
-  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
-  z-index:9999;
-}
-
-/* =========================
+/* =====================================================
    HEADER
-========================= */
+===================================================== */
 
 header{
   position:fixed;
@@ -82,43 +85,43 @@ header{
   left:0;
   width:100%;
   z-index:1000;
-  background:rgba(5,5,5,.75);
+  background:rgba(5,5,5,.88);
   backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
   border-bottom:1px solid var(--border);
 }
 
 .nav{
-  height:78px;
+  min-height:82px;
   display:flex;
   align-items:center;
   justify-content:space-between;
+  gap:20px;
 }
+
+/* LOGO PRINCIPAL */
 
 .logo{
   display:flex;
   align-items:center;
-  gap:10px;
+  gap:12px;
+  min-width:0;
 }
 
-.logo-mark{
-  width:40px;
-  height:40px;
+.logo-image{
+  width:55px;
+  height:55px;
+  object-fit:contain;
+  border-radius:50%;
   border:1px solid var(--gold);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  transform:rotate(45deg);
-}
-
-.logo-mark span{
-  transform:rotate(-45deg);
-  color:var(--gold);
-  font-weight:900;
+  background:#111;
 }
 
 .logo-text{
   font-weight:900;
   letter-spacing:2px;
+  font-size:15px;
+  white-space:nowrap;
 }
 
 .logo-text span{
@@ -127,12 +130,12 @@ header{
 
 nav{
   display:flex;
-  gap:25px;
+  gap:22px;
   align-items:center;
 }
 
 nav a{
-  font-size:12px;
+  font-size:11px;
   text-transform:uppercase;
   letter-spacing:1px;
   color:#ccc;
@@ -149,9 +152,9 @@ nav a:hover{
   color:var(--gold);
 }
 
-/* =========================
+/* =====================================================
    HERO
-========================= */
+===================================================== */
 
 .hero{
   min-height:100vh;
@@ -166,17 +169,17 @@ nav a:hover{
   position:absolute;
   right:0;
   top:0;
-  width:63%;
+  width:65%;
   height:100%;
   background:
     linear-gradient(
       90deg,
       #050505 0%,
-      rgba(5,5,5,.82) 17%,
-      rgba(5,5,5,.25) 65%,
-      rgba(5,5,5,.3)
+      rgba(5,5,5,.9) 13%,
+      rgba(5,5,5,.35) 70%,
+      rgba(5,5,5,.2) 100%
     ),
-    url("https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1800&q=90")
+    url("cliente.jpg")
     center/cover no-repeat;
 }
 
@@ -217,7 +220,7 @@ nav a:hover{
 
 .hero p{
   color:#c6c6c6;
-  max-width:540px;
+  max-width:560px;
   font-size:15px;
   line-height:1.8;
 }
@@ -235,11 +238,12 @@ nav a:hover{
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  font-size:12px;
+  font-size:11px;
   font-weight:800;
   text-transform:uppercase;
   letter-spacing:1px;
   transition:.3s;
+  cursor:pointer;
 }
 
 .btn-gold{
@@ -261,10 +265,6 @@ nav a:hover{
   color:var(--gold);
 }
 
-/* =========================
-   HERO SIDE
-========================= */
-
 .hero-number{
   position:absolute;
   right:5%;
@@ -277,9 +277,9 @@ nav a:hover{
   text-transform:uppercase;
 }
 
-/* =========================
+/* =====================================================
    INTRO
-========================= */
+===================================================== */
 
 .intro{
   padding:55px 0;
@@ -322,9 +322,9 @@ nav a:hover{
   margin-top:5px;
 }
 
-/* =========================
-   SECTION TITLE
-========================= */
+/* =====================================================
+   SECTION
+===================================================== */
 
 .section{
   padding:120px 0;
@@ -354,15 +354,69 @@ nav a:hover{
 }
 
 .section-description{
-  width:360px;
+  width:390px;
   color:#777;
   font-size:13px;
   line-height:1.8;
 }
 
-/* =========================
-   SERVICES
-========================= */
+/* =====================================================
+   LOGOS
+===================================================== */
+
+.logos-section{
+  background:#050505;
+}
+
+.logos-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:25px;
+}
+
+.logo-card{
+  position:relative;
+  min-height:350px;
+  background:#0d0d0d;
+  border:1px solid var(--border);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:35px;
+  overflow:hidden;
+}
+
+.logo-card:before{
+  content:"";
+  position:absolute;
+  inset:15px;
+  border:1px solid rgba(201,164,92,.18);
+  pointer-events:none;
+}
+
+.logo-card img{
+  width:min(75%,320px);
+  height:260px;
+  object-fit:contain;
+  position:relative;
+  z-index:2;
+}
+
+.logo-card-label{
+  position:absolute;
+  left:25px;
+  bottom:20px;
+  color:var(--gold);
+  font-size:10px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  font-weight:800;
+  z-index:3;
+}
+
+/* =====================================================
+   SERVIÇOS
+===================================================== */
 
 .services{
   background:#0b0b0b;
@@ -370,17 +424,17 @@ nav a:hover{
 
 .service-layout{
   display:grid;
-  grid-template-columns:1.3fr .7fr;
+  grid-template-columns:1.2fr .8fr;
   gap:20px;
 }
 
 .service-main{
-  min-height:500px;
+  min-height:520px;
   position:relative;
   overflow:hidden;
   background:
-    linear-gradient(to top,rgba(0,0,0,.9),rgba(0,0,0,.15)),
-    url("https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=1300&q=90")
+    linear-gradient(to top,rgba(0,0,0,.92),rgba(0,0,0,.15)),
+    url("corte completo.jpg")
     center/cover;
 }
 
@@ -402,6 +456,7 @@ nav a:hover{
   font-size:12px;
   max-width:450px;
   margin-top:12px;
+  line-height:1.7;
 }
 
 .service-list{
@@ -450,11 +505,161 @@ nav a:hover{
   color:#777;
   font-size:11px;
   margin-top:6px;
+  line-height:1.6;
 }
 
-/* =========================
-   ABOUT
-========================= */
+/* =====================================================
+   CORTES AFRO / AMERICANOS
+===================================================== */
+
+.cut-types{
+  background:#050505;
+}
+
+.cut-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+
+.cut-card{
+  position:relative;
+  min-height:430px;
+  overflow:hidden;
+  border:1px solid var(--border);
+}
+
+.cut-card img{
+  width:100%;
+  height:100%;
+  min-height:430px;
+  object-fit:cover;
+  transition:.6s;
+}
+
+.cut-card:hover img{
+  transform:scale(1.05);
+}
+
+.cut-overlay{
+  position:absolute;
+  inset:0;
+  padding:35px;
+  display:flex;
+  flex-direction:column;
+  justify-content:end;
+  background:linear-gradient(
+    to top,
+    rgba(0,0,0,.95),
+    rgba(0,0,0,.05)
+  );
+}
+
+.cut-number{
+  color:var(--gold);
+  font-size:10px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  margin-bottom:10px;
+}
+
+.cut-overlay h3{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:65px;
+  line-height:.85;
+}
+
+.cut-overlay p{
+  color:#ccc;
+  font-size:12px;
+  line-height:1.7;
+  max-width:430px;
+  margin-top:12px;
+}
+
+/* =====================================================
+   PREÇÁRIO
+===================================================== */
+
+.pricing{
+  background:#0b0b0b;
+}
+
+.price-categories{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+
+.price-category{
+  background:#101010;
+  border:1px solid var(--border);
+  padding:32px;
+}
+
+.price-category.full{
+  grid-column:1 / -1;
+}
+
+.price-category-title{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  padding-bottom:18px;
+  border-bottom:1px solid var(--border);
+  margin-bottom:5px;
+}
+
+.price-category-title h3{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:38px;
+  letter-spacing:.5px;
+}
+
+.price-category-title span{
+  color:var(--gold);
+  font-size:10px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+.price-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  padding:16px 0;
+  border-bottom:1px solid rgba(255,255,255,.07);
+}
+
+.price-row:last-child{
+  border-bottom:0;
+}
+
+.price-name{
+  color:#ddd;
+  font-size:12px;
+  line-height:1.5;
+}
+
+.price{
+  color:var(--gold-light);
+  font-size:13px;
+  font-weight:800;
+  white-space:nowrap;
+}
+
+.price-note{
+  margin-top:20px;
+  color:#666;
+  font-size:10px;
+  line-height:1.6;
+}
+
+/* =====================================================
+   SOBRE
+===================================================== */
 
 .about{
   background:#050505;
@@ -539,9 +744,9 @@ nav a:hover{
   text-transform:uppercase;
 }
 
-/* =========================
-   GALLERY
-========================= */
+/* =====================================================
+   GALERIA
+===================================================== */
 
 .gallery{
   background:#0b0b0b;
@@ -557,6 +762,7 @@ nav a:hover{
 .gallery-item{
   position:relative;
   overflow:hidden;
+  background:#111;
 }
 
 .gallery-item:first-child{
@@ -579,7 +785,7 @@ nav a:hover{
   display:flex;
   align-items:end;
   padding:22px;
-  background:linear-gradient(transparent,rgba(0,0,0,.8));
+  background:linear-gradient(transparent,rgba(0,0,0,.85));
   opacity:0;
   transition:.3s;
 }
@@ -594,17 +800,17 @@ nav a:hover{
   text-transform:uppercase;
 }
 
-/* =========================
+/* =====================================================
    QUOTE
-========================= */
+===================================================== */
 
 .quote{
   padding:130px 0;
   text-align:center;
   background:
-    linear-gradient(rgba(0,0,0,.72),rgba(0,0,0,.9)),
-    url("https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=1800&q=90")
-    center/cover fixed;
+    linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.92)),
+    url("cliente5.jpg")
+    center/cover;
 }
 
 .quote-mark{
@@ -629,9 +835,9 @@ nav a:hover{
   text-transform:uppercase;
 }
 
-/* =========================
-   LOCATION
-========================= */
+/* =====================================================
+   LOCALIZAÇÃO
+===================================================== */
 
 .location{
   background:#050505;
@@ -682,9 +888,65 @@ nav a:hover{
   text-align:right;
 }
 
-/* =========================
-   FINAL CTA
-========================= */
+/* =====================================================
+   HORÁRIO
+===================================================== */
+
+.hours{
+  background:#0b0b0b;
+}
+
+.hours-box{
+  background:#101010;
+  border:1px solid var(--border);
+  padding:40px;
+  max-width:850px;
+  margin:auto;
+}
+
+.hours-title{
+  text-align:center;
+  margin-bottom:30px;
+}
+
+.hours-title h3{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:55px;
+}
+
+.hours-title p{
+  color:#777;
+  font-size:12px;
+  margin-top:5px;
+}
+
+.hour-row{
+  display:flex;
+  justify-content:space-between;
+  padding:17px 0;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.hour-row:last-child{
+  border-bottom:0;
+}
+
+.hour-row span:first-child{
+  color:#aaa;
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:1px;
+}
+
+.hour-row span:last-child{
+  color:var(--gold-light);
+  font-size:12px;
+  font-weight:800;
+}
+
+/* =====================================================
+   CTA
+===================================================== */
 
 .final-cta{
   position:relative;
@@ -727,9 +989,9 @@ nav a:hover{
   color:var(--gold);
 }
 
-/* =========================
+/* =====================================================
    FOOTER
-========================= */
+===================================================== */
 
 footer{
   padding:45px 0;
@@ -741,6 +1003,7 @@ footer{
   display:flex;
   justify-content:space-between;
   align-items:center;
+  gap:30px;
 }
 
 .footer-brand{
@@ -756,11 +1019,12 @@ footer{
   color:#555;
   font-size:10px;
   text-align:right;
+  line-height:1.8;
 }
 
-/* =========================
+/* =====================================================
    WHATSAPP
-========================= */
+===================================================== */
 
 .whatsapp{
   position:fixed;
@@ -769,7 +1033,7 @@ footer{
   width:62px;
   height:62px;
   border-radius:50%;
-  background:#25d366;
+  background:var(--whatsapp);
   display:flex;
   align-items:center;
   justify-content:center;
@@ -788,23 +1052,9 @@ footer{
   fill:white;
 }
 
-/* =========================
-   DEMO
-========================= */
-
-.demo{
-  background:#050505;
-  color:#555;
-  text-align:center;
-  padding:14px;
-  font-size:9px;
-  text-transform:uppercase;
-  letter-spacing:1px;
-}
-
-/* =========================
+/* =====================================================
    MOBILE
-========================= */
+===================================================== */
 
 @media(max-width:850px){
 
@@ -852,12 +1102,28 @@ footer{
     margin-top:20px;
   }
 
+  .logos-grid{
+    grid-template-columns:1fr;
+  }
+
   .service-layout{
     grid-template-columns:1fr;
   }
 
   .service-main{
     min-height:420px;
+  }
+
+  .cut-grid{
+    grid-template-columns:1fr;
+  }
+
+  .price-categories{
+    grid-template-columns:1fr;
+  }
+
+  .price-category.full{
+    grid-column:auto;
   }
 
   .about-grid{
@@ -890,6 +1156,7 @@ footer{
     text-align:left;
     margin-top:15px;
   }
+
 }
 
 @media(max-width:520px){
@@ -898,13 +1165,13 @@ footer{
     width:92%;
   }
 
-  .logo-text{
-    font-size:12px;
+  .logo-image{
+    width:43px;
+    height:43px;
   }
 
-  .logo-mark{
-    width:34px;
-    height:34px;
+  .logo-text{
+    font-size:11px;
   }
 
   .hero{
@@ -927,8 +1194,20 @@ footer{
     width:100%;
   }
 
+  .logo-card{
+    min-height:280px;
+  }
+
+  .logo-card img{
+    height:210px;
+  }
+
   .service-main h3{
     font-size:52px;
+  }
+
+  .cut-overlay h3{
+    font-size:54px;
   }
 
   .about-points{
@@ -947,10 +1226,6 @@ footer{
     grid-row:auto;
   }
 
-  .quote{
-    background-attachment:scroll;
-  }
-
   .location-card{
     padding:25px;
   }
@@ -965,12 +1240,47 @@ footer{
     margin-top:6px;
   }
 
+  .hours-box{
+    padding:25px 20px;
+  }
+
+  .hour-row{
+    gap:20px;
+  }
+
   .final-content h2{
     font-size:75px;
   }
 
   .final-cta:before{
     font-size:140px;
+  }
+
+  .price-category{
+    padding:24px 20px;
+  }
+
+  .price-category-title h3{
+    font-size:32px;
+  }
+
+}
+
+/* =====================================================
+   REDUÇÃO DE MOVIMENTO
+===================================================== */
+
+@media(prefers-reduced-motion:reduce){
+
+  html{
+    scroll-behavior:auto;
+  }
+
+  *,
+  *:before,
+  *:after{
+    transition:none !important;
+    animation:none !important;
   }
 
 }
@@ -980,9 +1290,9 @@ footer{
 
 <body>
 
-<!-- =========================
+<!-- =====================================================
      HEADER
-========================= -->
+===================================================== -->
 
 <header>
 
@@ -990,9 +1300,10 @@ footer{
 
 <a href="#inicio" class="logo">
 
-<div class="logo-mark">
-<span>CB</span>
-</div>
+<img
+src="logotipo principal.jpg"
+alt="Claude Broka Barbershop"
+class="logo-image">
 
 <div class="logo-text">
 CLAUDE <span>BROKA</span>
@@ -1004,13 +1315,15 @@ CLAUDE <span>BROKA</span>
 
 <a href="#inicio">Início</a>
 <a href="#servicos">Serviços</a>
-<a href="#sobre">Sobre</a>
+<a href="#cortes">Cortes</a>
+<a href="#precos">Preçário</a>
 <a href="#galeria">Galeria</a>
 <a href="#contacto">Contacto</a>
 
 <a
 href="https://wa.me/244933206527?text=Olá%20Claude%20Broka!%20Gostaria%20de%20marcar%20um%20horário."
 target="_blank"
+rel="noopener"
 class="nav-button">
 Agendar
 </a>
@@ -1022,9 +1335,9 @@ Agendar
 </header>
 
 
-<!-- =========================
+<!-- =====================================================
      HERO
-========================= -->
+===================================================== -->
 
 <section class="hero" id="inicio">
 
@@ -1051,9 +1364,9 @@ Style
 <div class="hero-line"></div>
 
 <p>
-Onde a tradição encontra o teu estilo.
-Uma experiência masculina marcada por precisão,
-personalidade e atenção aos detalhes.
+Cortamos todo tipo de cabelos e fazemos todo tipo de cortes,
+do mais simples ao mais complicado.
+Aqui deixamos-te na régua, no verdadeiro sentido da palavra.
 </p>
 
 <div class="hero-buttons">
@@ -1061,12 +1374,13 @@ personalidade e atenção aos detalhes.
 <a
 href="https://wa.me/244933206527?text=Olá%20Claude%20Broka!%20Gostaria%20de%20marcar%20um%20horário."
 target="_blank"
+rel="noopener"
 class="btn btn-gold">
 Agendar pelo WhatsApp
 </a>
 
-<a href="#servicos" class="btn btn-dark">
-Explorar
+<a href="#precos" class="btn btn-dark">
+Ver Preçário
 </a>
 
 </div>
@@ -1078,9 +1392,9 @@ Explorar
 </section>
 
 
-<!-- =========================
+<!-- =====================================================
      INTRO
-========================= -->
+===================================================== -->
 
 <section class="intro">
 
@@ -1092,10 +1406,10 @@ Explorar
 
 <div class="intro-number">01</div>
 
-<h3>Estilo</h3>
+<h3>Cortes Afro</h3>
 
 <p>
-O visual que combina contigo.
+Estilo, criatividade e precisão.
 </p>
 
 </div>
@@ -1104,10 +1418,10 @@ O visual que combina contigo.
 
 <div class="intro-number">02</div>
 
-<h3>Precisão</h3>
+<h3>Cortes Americanos</h3>
 
 <p>
-Atenção aos detalhes.
+Acabamentos modernos e marcantes.
 </p>
 
 </div>
@@ -1116,10 +1430,10 @@ Atenção aos detalhes.
 
 <div class="intro-number">03</div>
 
-<h3>Atitude</h3>
+<h3>Na Régua</h3>
 
 <p>
-Uma presença que se destaca.
+Detalhes que fazem a diferença.
 </p>
 
 </div>
@@ -1131,9 +1445,72 @@ Uma presença que se destaca.
 </section>
 
 
-<!-- =========================
+<!-- =====================================================
+     LOGOTIPOS
+===================================================== -->
+
+<section class="section logos-section">
+
+<div class="container">
+
+<div class="section-header">
+
+<div>
+
+<div class="section-label">
+01 — Identidade
+</div>
+
+<h2 class="section-title">
+Claude<br>Broka.
+</h2>
+
+</div>
+
+<p class="section-description">
+Uma identidade criada para representar
+a personalidade, atitude e estilo da
+Claude Broka Barbershop.
+</p>
+
+</div>
+
+<div class="logos-grid">
+
+<div class="logo-card">
+
+<img
+src="logotipo principal.jpg"
+alt="Logotipo principal Claude Broka Barbershop">
+
+<div class="logo-card-label">
+Logotipo Principal
+</div>
+
+</div>
+
+<div class="logo-card">
+
+<img
+src="logotipo secundário.jpg"
+alt="Logotipo secundário Claude Broka Barbershop">
+
+<div class="logo-card-label">
+Logotipo Secundário
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
      SERVIÇOS
-========================= -->
+===================================================== -->
 
 <section class="section services" id="servicos">
 
@@ -1144,20 +1521,19 @@ Uma presença que se destaca.
 <div>
 
 <div class="section-label">
-01 — Serviços
+02 — Serviços
 </div>
 
 <h2 class="section-title">
-Escolhe<br>o teu estilo.
+O teu<br>estilo.
 </h2>
 
 </div>
 
 <p class="section-description">
-Uma apresentação simples e visual dos serviços
-da barbearia. Os serviços e preços podem ser
-personalizados conforme as informações oficiais
-da Claude Broka.
+Do corte à barba, da laminagem à pintura,
+a Claude Broka oferece diferentes serviços
+para completar o teu visual.
 </p>
 
 </div>
@@ -1179,8 +1555,8 @@ Masculino
 </h3>
 
 <p>
-Um acabamento pensado para valorizar
-o teu estilo e a tua personalidade.
+Cortes afro, cortes americanos e diversos
+acabamentos para deixar-te na régua.
 </p>
 
 </div>
@@ -1201,7 +1577,8 @@ Barba
 </h3>
 
 <p>
-Manutenção e acabamento para um visual alinhado.
+Depilador, máquina, gellete, pintura
+e combinações completas.
 </p>
 
 </div>
@@ -1210,15 +1587,16 @@ Manutenção e acabamento para um visual alinhado.
 <div class="service-card">
 
 <div class="service-card-number">
-03 / FINISH
+03 / LINE UP
 </div>
 
 <h3>
-Acabamento
+Laminagem
 </h3>
 
 <p>
-Os pequenos detalhes que completam o teu visual.
+Laminagem e laminagem com barba
+para um acabamento definido.
 </p>
 
 </div>
@@ -1227,15 +1605,16 @@ Os pequenos detalhes que completam o teu visual.
 <div class="service-card">
 
 <div class="service-card-number">
-04 / CONTACTO
+04 / COLOR
 </div>
 
 <h3>
-Marca o teu horário
+Pinturas
 </h3>
 
 <p>
-Fala diretamente pelo WhatsApp.
+Pintura preta e loira para cabelos
+curtos, médios e longos.
 </p>
 
 </div>
@@ -1249,9 +1628,378 @@ Fala diretamente pelo WhatsApp.
 </section>
 
 
-<!-- =========================
+<!-- =====================================================
+     CORTES
+===================================================== -->
+
+<section class="section cut-types" id="cortes">
+
+<div class="container">
+
+<div class="section-header">
+
+<div>
+
+<div class="section-label">
+03 — Especialidade
+</div>
+
+<h2 class="section-title">
+Afro &<br>American.
+</h2>
+
+</div>
+
+<p class="section-description">
+Organizamos os principais estilos em duas
+categorias para facilitar a escolha do
+cliente antes de chegar à cadeira.
+</p>
+
+</div>
+
+
+<div class="cut-grid">
+
+<div class="cut-card">
+
+<img
+src="corte.jpg"
+alt="Cortes afro na Claude Broka Barbershop"
+loading="lazy">
+
+<div class="cut-overlay">
+
+<div class="cut-number">
+01 / Afro
+</div>
+
+<h3>
+Cortes<br>Afro
+</h3>
+
+<p>
+Cortes afro com personalidade, criatividade
+e acabamento preciso. Do simples ao mais
+elaborado.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="cut-card">
+
+<img
+src="corte1.jpg"
+alt="Cortes americanos na Claude Broka Barbershop"
+loading="lazy">
+
+<div class="cut-overlay">
+
+<div class="cut-number">
+02 / American
+</div>
+
+<h3>
+Cortes<br>Americanos
+</h3>
+
+<p>
+Estilos modernos, linhas definidas e
+acabamentos inspirados na barbearia
+americana.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     PREÇÁRIO
+===================================================== -->
+
+<section class="section pricing" id="precos">
+
+<div class="container">
+
+<div class="section-header">
+
+<div>
+
+<div class="section-label">
+04 — Preçário
+</div>
+
+<h2 class="section-title">
+Escolhe<br>o serviço.
+</h2>
+
+</div>
+
+<p class="section-description">
+Todos os valores apresentados estão em
+Kwanza Angolano (Kz).
+</p>
+
+</div>
+
+
+<div class="price-categories">
+
+
+<!-- BARBA -->
+
+<div class="price-category">
+
+<div class="price-category-title">
+
+<h3>Barba</h3>
+
+<span>01</span>
+
+</div>
+
+<div class="price-row">
+<span class="price-name">Com depilador</span>
+<span class="price">3.000 Kz</span>
+</div>
+
+<div class="price-row">
+<span class="price-name">Com máquina</span>
+<span class="price">2.000 Kz</span>
+</div>
+
+<div class="price-row">
+<span class="price-name">Com gellete</span>
+<span class="price">3.000 Kz</span>
+</div>
+
+<div class="price-row">
+<span class="price-name">Com pintura</span>
+<span class="price">2.500 Kz</span>
+</div>
+
+<div class="price-row">
+<span class="price-name">Com pintura + desfriso</span>
+<span class="price">4.000 Kz</span>
+</div>
+
+</div>
+
+
+<!-- CRIANÇA -->
+
+<div class="price-category">
+
+<div class="price-category-title">
+
+<h3>Criança</h3>
+
+<span>02</span>
+
+</div>
+
+<div class="price-row">
+<span class="price-name">Corte</span>
+<span class="price">2.000 Kz</span>
+</div>
+
+<div class="price-row">
+<span class="price-name">Corte com grafite</span>
+<span class="price">3.000 Kz</span>
+</div>
+
+<div class="price-row">
+<span class="price-name">Corte + pintura</span>
+<span class="price">4.000 Kz</span>
+</div>
+
+</div>
+
+
+<!-- ADULTO -->
+
+<div class="price-category full">
+
+<div class="price-category-title">
+
+<h3>Adulto</h3>
+
+<span>03</span>
+
+</div>
+
+<div class="price-row">
+<span class="price-name">Corte</span>
+<span class="price">3.000 Kz</span>
+</div>
+
+<div class="price-row">
+<span class="price-name">Careca</span>
+<span class="price">3.000 Kz</span>
+</div>
+
+<div class="price-row">
+<span class="price-name">Corte e barba</span>
+<span class="price">4.000 Kz</span>
+</div>
+
+<div class="price-row">
+<span class="price-name">Careca com depilador</span>
+<span class="price">8.000 Kz</span>
+</div>
+
+<div class="price-row">
+<span class="price-name">Corte, barba e pintura na barba</span>
+<span class="price">5.000 Kz</span>
+</div>
+
+<div class="price-row">
+<span class="price-name">Corte, barba e desfriso na barba</span>
+<span class="price">5.000 Kz</span>
+</div>
+
+<div class="price-row">
+<span class="price-name">Corte, barba, desfriso e pintura na barba</span>
+<span class="price">6.000 Kz</span>
+</div>
+
+<div class="price-row">
+<span class="price-name">Corte, barba e pintura preta</span>
+<span class="price">5.000 Kz</span>
+</div>
+
+<div class="price-row">
+<span class="price-name">Corte, barba, desfriso e pintura preta</span>
+<span class="price">6.000 Kz</span>
+</div>
+
+</div>
+
+
+<!-- LINE UP -->
+
+<div class="price-category">
+
+<div class="price-category-title">
+
+<h3>Line Up</h3>
+
+<span>04</span>
+
+</div>
+
+<div class="price-row">
+<span class="price-name">Laminagem</span>
+<span class="price">2.000 Kz</span>
+</div>
+
+<div class="price-row">
+<span class="price-name">Laminagem e barba</span>
+<span class="price">2.500 Kz</span>
+</div>
+
+</div>
+
+
+<!-- SOBRANCELHAS -->
+
+<div class="price-category">
+
+<div class="price-category-title">
+
+<h3>Sobrancelhas</h3>
+
+<span>05</span>
+
+</div>
+
+<div class="price-row">
+<span class="price-name">Com e sem pintura</span>
+<span class="price">2.000 Kz</span>
+</div>
+
+</div>
+
+
+<!-- PINTURA PRETA -->
+
+<div class="price-category">
+
+<div class="price-category-title">
+
+<h3>Pintura Preta</h3>
+
+<span>06</span>
+
+</div>
+
+<div class="price-row">
+<span class="price-name">Cabelos curtos</span>
+<span class="price">2.000 Kz</span>
+</div>
+
+<div class="price-row">
+<span class="price-name">Cabelos médios</span>
+<span class="price">4.000 Kz</span>
+</div>
+
+<div class="price-row">
+<span class="price-name">Cabelos longos</span>
+<span class="price">8.000 Kz</span>
+</div>
+
+</div>
+
+
+<!-- PINTURA LOIRA -->
+
+<div class="price-category">
+
+<div class="price-category-title">
+
+<h3>Pintura Loira</h3>
+
+<span>07</span>
+
+</div>
+
+<div class="price-row">
+<span class="price-name">Cabelos curtos</span>
+<span class="price">10.000 Kz</span>
+</div>
+
+<div class="price-row">
+<span class="price-name">Cabelos médios</span>
+<span class="price">20.000 Kz</span>
+</div>
+
+<div class="price-row">
+<span class="price-name">Cabelos longos</span>
+<span class="price">30.000 Kz</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
      SOBRE
-========================= -->
+===================================================== -->
 
 <section class="section about" id="sobre">
 
@@ -1262,8 +2010,8 @@ Fala diretamente pelo WhatsApp.
 <div class="about-image">
 
 <img
-src="https://images.unsplash.com/photo-1512690459411-b9245aed614b?auto=format&fit=crop&w=1100&q=90"
-alt="Ambiente de barbearia"
+src="cliente1.jpg"
+alt="Cliente da Claude Broka Barbershop"
 loading="lazy">
 
 <div class="about-image-box">
@@ -1282,7 +2030,7 @@ Claude Broka
 <div class="about-text">
 
 <div class="section-label">
-02 — A experiência
+05 — A nossa essência
 </div>
 
 <div class="big">
@@ -1291,34 +2039,38 @@ um <span>corte.</span>
 </div>
 
 <p>
-É sobre sair da cadeira sentindo que o teu
-visual representa quem tu és.
+Na Claude Broka Barbershop, cada corte é pensado
+para valorizar o teu estilo e a tua personalidade.
 </p>
 
 <p>
-A Claude Broka Barbershop é apresentada nesta
-demonstração como uma marca masculina moderna,
-com uma experiência digital criada para aproximar
-a barbearia dos seus clientes.
+Trabalhamos com diferentes tipos de cabelos e
+diferentes estilos de corte, desde os mais simples
+até aos mais elaborados.
+</p>
+
+<p>
+Aqui, o objetivo é simples: fazer com que saias
+da cadeira com confiança e com o visual na régua.
 </p>
 
 
 <div class="about-points">
 
 <div class="about-point">
-✦ Estilo masculino
+✦ Cortes Afro
 </div>
 
 <div class="about-point">
-✦ Atenção aos detalhes
+✦ Cortes Americanos
 </div>
 
 <div class="about-point">
-✦ Experiência
+✦ Barba
 </div>
 
 <div class="about-point">
-✦ Contacto direto
+✦ Pintura
 </div>
 
 </div>
@@ -1332,9 +2084,9 @@ a barbearia dos seus clientes.
 </section>
 
 
-<!-- =========================
+<!-- =====================================================
      GALERIA
-========================= -->
+===================================================== -->
 
 <section class="section gallery" id="galeria">
 
@@ -1345,7 +2097,7 @@ a barbearia dos seus clientes.
 <div>
 
 <div class="section-label">
-03 — Visual
+06 — Galeria
 </div>
 
 <h2 class="section-title">
@@ -1355,9 +2107,8 @@ The<br>Look.
 </div>
 
 <p class="section-description">
-Uma galeria visual dá vida à presença digital
-e permite que o visitante tenha uma primeira
-impressão do estilo da marca.
+Veja alguns dos estilos e trabalhos apresentados
+pela Claude Broka Barbershop.
 </p>
 
 </div>
@@ -1365,15 +2116,16 @@ impressão do estilo da marca.
 
 <div class="gallery-grid">
 
+
 <div class="gallery-item">
 
 <img
-src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1000&q=90"
-alt="Barbearia"
+src="cliente2.jpg"
+alt="Cliente Claude Broka"
 loading="lazy">
 
 <div class="gallery-overlay">
-<span>Barbershop</span>
+<span>Claude Broka</span>
 </div>
 
 </div>
@@ -1382,8 +2134,8 @@ loading="lazy">
 <div class="gallery-item">
 
 <img
-src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=1000&q=90"
-alt="Corte masculino"
+src="cliente3.jpg"
+alt="Corte Claude Broka"
 loading="lazy">
 
 <div class="gallery-overlay">
@@ -1396,8 +2148,8 @@ loading="lazy">
 <div class="gallery-item">
 
 <img
-src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=1000&q=90"
-alt="Barbeiro"
+src="cliente4.jpg"
+alt="Estilo masculino Claude Broka"
 loading="lazy">
 
 <div class="gallery-overlay">
@@ -1410,8 +2162,8 @@ loading="lazy">
 <div class="gallery-item">
 
 <img
-src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=1000&q=90"
-alt="Estilo masculino"
+src="corte completo1.jpg"
+alt="Corte completo Claude Broka"
 loading="lazy">
 
 <div class="gallery-overlay">
@@ -1424,12 +2176,12 @@ loading="lazy">
 <div class="gallery-item">
 
 <img
-src="https://images.unsplash.com/photo-1622288432450-277d0fef5ed9?auto=format&fit=crop&w=1000&q=90"
-alt="Interior de barbearia"
+src="barba.jpg"
+alt="Serviço de barba Claude Broka"
 loading="lazy">
 
 <div class="gallery-overlay">
-<span>Experience</span>
+<span>Barba</span>
 </div>
 
 </div>
@@ -1441,9 +2193,117 @@ loading="lazy">
 </section>
 
 
-<!-- =========================
+<!-- =====================================================
+     SERVIÇOS VISUAIS
+===================================================== -->
+
+<section class="section gallery">
+
+<div class="container">
+
+<div class="section-header">
+
+<div>
+
+<div class="section-label">
+07 — Acabamentos
+</div>
+
+<h2 class="section-title">
+Detalhes<br>na régua.
+</h2>
+
+</div>
+
+<p class="section-description">
+Os detalhes fazem parte da experiência.
+Conheça alguns dos serviços de acabamento.
+</p>
+
+</div>
+
+
+<div class="gallery-grid">
+
+<div class="gallery-item">
+
+<img
+src="pintura.jpg"
+alt="Pintura de cabelo e barba"
+loading="lazy">
+
+<div class="gallery-overlay">
+<span>Pintura</span>
+</div>
+
+</div>
+
+
+<div class="gallery-item">
+
+<img
+src="laminagem.jpg"
+alt="Laminagem Claude Broka"
+loading="lazy">
+
+<div class="gallery-overlay">
+<span>Laminagem</span>
+</div>
+
+</div>
+
+
+<div class="gallery-item">
+
+<img
+src="laminagem1.jpg"
+alt="Laminagem Claude Broka"
+loading="lazy">
+
+<div class="gallery-overlay">
+<span>Line Up</span>
+</div>
+
+</div>
+
+
+<div class="gallery-item">
+
+<img
+src="corte completo.jpg"
+alt="Corte completo"
+loading="lazy">
+
+<div class="gallery-overlay">
+<span>Corte Completo</span>
+</div>
+
+</div>
+
+
+<div class="gallery-item">
+
+<img
+src="cliente5.jpg"
+alt="Cliente Claude Broka"
+loading="lazy">
+
+<div class="gallery-overlay">
+<span>Resultado</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
      FRASE
-========================= -->
+===================================================== -->
 
 <section class="quote">
 
@@ -1454,8 +2314,8 @@ loading="lazy">
 </div>
 
 <h2>
-Onde a tradição encontra
-o teu estilo.
+Aqui deixamos-te na régua,
+no verdadeiro sentido da palavra.
 </h2>
 
 <p>
@@ -1467,9 +2327,105 @@ Claude Broka Barbershop • Luanda
 </section>
 
 
-<!-- =========================
+<!-- =====================================================
+     HORÁRIO
+===================================================== -->
+
+<section class="section hours">
+
+<div class="container">
+
+<div class="hours-box">
+
+<div class="hours-title">
+
+<div class="section-label">
+08 — Funcionamento
+</div>
+
+<h3>
+Estamos à tua espera.
+</h3>
+
+<p>
+De segunda a domingo, das 08h às 20h.
+</p>
+
+</div>
+
+
+<div class="hour-row">
+
+<span>Segunda-feira</span>
+
+<span>08:00 — 20:00</span>
+
+</div>
+
+
+<div class="hour-row">
+
+<span>Terça-feira</span>
+
+<span>08:00 — 20:00</span>
+
+</div>
+
+
+<div class="hour-row">
+
+<span>Quarta-feira</span>
+
+<span>08:00 — 20:00</span>
+
+</div>
+
+
+<div class="hour-row">
+
+<span>Quinta-feira</span>
+
+<span>08:00 — 20:00</span>
+
+</div>
+
+
+<div class="hour-row">
+
+<span>Sexta-feira</span>
+
+<span>08:00 — 20:00</span>
+
+</div>
+
+
+<div class="hour-row">
+
+<span>Sábado</span>
+
+<span>08:00 — 20:00</span>
+
+</div>
+
+
+<div class="hour-row">
+
+<span>Domingo</span>
+
+<span>08:00 — 20:00</span>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
      LOCALIZAÇÃO
-========================= -->
+===================================================== -->
 
 <section class="section location" id="contacto">
 
@@ -1480,7 +2436,7 @@ Claude Broka Barbershop • Luanda
 <div>
 
 <div class="section-label">
-04 — Visita-nos
+09 — Visita-nos
 </div>
 
 <h2 class="section-title">
@@ -1490,9 +2446,9 @@ Encontra<br>o teu lugar.
 </div>
 
 <p class="section-description">
-Consulta a localização e entra em contacto
-diretamente pelo WhatsApp para informações
-e marcações.
+Estamos na Avenida Deolinda Rodrigues.
+Para marcações e informações, fala diretamente
+connosco pelo WhatsApp.
 </p>
 
 </div>
@@ -1508,9 +2464,13 @@ Localização
 </h3>
 
 <p>
-Avenida Deolinda Rodrigues,
-estrada que dá acesso ao supermercado Jumbo,
-antes da PEP.
+<strong style="color:#ddd;">
+Avenida Deolinda Rodrigues
+</strong>
+</p>
+
+<p>
+Rua dos Serviços, antes do supermercado Jumbo.
 </p>
 
 <p style="margin-top:15px;">
@@ -1520,10 +2480,11 @@ Luanda, Angola
 <br>
 
 <a
-href="https://www.google.com/maps/search/?api=1&query=Claude%20Broka%20Barbershop%20Luanda"
+href="https://www.google.com/maps/search/?api=1&query=Avenida%20Deolinda%20Rodrigues%20Rua%20dos%20Serviços%20Jumbo%20Luanda"
 target="_blank"
+rel="noopener"
 class="btn btn-dark">
-Abrir localização
+Abrir no Google Maps
 </a>
 
 </div>
@@ -1548,10 +2509,10 @@ Contacto
 
 <div class="info-row">
 
-<span>Segunda — Sábado</span>
+<span>Funcionamento</span>
 
 <span>
-09:00 — 20:00
+Segunda a Domingo
 </span>
 
 </div>
@@ -1559,10 +2520,10 @@ Contacto
 
 <div class="info-row">
 
-<span>Domingo</span>
+<span>Horário</span>
 
 <span>
-09:00 — 15:00
+08:00 — 20:00
 </span>
 
 </div>
@@ -1573,6 +2534,7 @@ Contacto
 <a
 href="https://wa.me/244933206527?text=Olá%20Claude%20Broka!%20Gostaria%20de%20marcar%20um%20horário."
 target="_blank"
+rel="noopener"
 class="btn btn-gold">
 Falar no WhatsApp
 </a>
@@ -1588,16 +2550,16 @@ Falar no WhatsApp
 </section>
 
 
-<!-- =========================
+<!-- =====================================================
      CTA FINAL
-========================= -->
+===================================================== -->
 
 <section class="final-cta">
 
 <div class="container final-content">
 
 <div class="small">
-Ready for your next look?
+Claude Broka Barbershop
 </div>
 
 <h2>
@@ -1608,6 +2570,7 @@ Marca<br>
 <a
 href="https://wa.me/244933206527?text=Olá%20Claude%20Broka!%20Quero%20marcar%20um%20horário."
 target="_blank"
+rel="noopener"
 class="btn btn-gold">
 Agendar pelo WhatsApp
 </a>
@@ -1617,23 +2580,9 @@ Agendar pelo WhatsApp
 </section>
 
 
-<!-- =========================
-     DEMO
-========================= -->
-
-<div class="demo">
-
-Demonstração de presença digital criada por
-Fely e Amigos | Soluções Digitais.
-<br>
-Demonstração comercial — não é o site oficial da Claude Broka Barbershop.
-
-</div>
-
-
-<!-- =========================
+<!-- =====================================================
      FOOTER
-========================= -->
+===================================================== -->
 
 <footer>
 
@@ -1646,7 +2595,9 @@ CLAUDE <span>BROKA</span>
 <div class="footer-text">
 
 Claude Broka Barbershop • Luanda, Angola<br>
-© 2026 • Demonstração digital
+Avenida Deolinda Rodrigues • Rua dos Serviços<br>
++244 933 206 527<br>
+© 2026 Claude Broka Barbershop
 
 </div>
 
@@ -1655,21 +2606,9 @@ Claude Broka Barbershop • Luanda, Angola<br>
 </footer>
 
 
-<!-- =========================
+<!-- =====================================================
      WHATSAPP
-========================= -->
+===================================================== -->
 
 <a
-href="https://wa.me/244933206527?text=Olá%20Claude%20Broka!%20Gostaria%20de%20saber%20mais%20sobre%20os%20serviços."
-target="_blank"
-class="whatsapp"
-aria-label="WhatsApp">
-
-<svg viewBox="0 0 24 24">
-<path d="M20.52 3.48A11.86 11.86 0 0 0 12.06 0C5.5 0 .16 5.34.16 11.9c0 2.1.55 4.15 1.6 5.96L.05 24l6.28-1.65a11.9 11.9 0 0 0 5.73 1.46h.01c6.55 0 11.89-5.34 11.89-11.9 0-3.18-1.24-6.17-3.44-8.43ZM12.06 21.8h-.01a9.88 9.88 0 0 1-5.03-1.38l-.36-.21-3.73.98.99-3.64-.23-.37a9.87 9.87 0 0 1-1.51-5.28C2.18 6.45 6.61 2.02 12.07 2.02c2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 7c0 5.45-4.43 9.88-9.89 9.88Zm5.42-7.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.74-1.64-2.04-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.21 5.09 4.5.71.31 1.26.49 1.69.63.71.23 1.35.2 1.86.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35Z"/>
-</svg>
-
-</a>
-
-</body>
-</html>
+href="https://wa.me/244933206527?text=Olá%
