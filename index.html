@@ -84,7 +84,6 @@ a{
   margin:auto;
 }
 
-
 /* =====================================================
    HEADER
 ===================================================== */
@@ -167,7 +166,6 @@ nav a:hover{
   color:#050505;
 }
 
-
 /* =====================================================
    HERO
 ===================================================== */
@@ -188,20 +186,20 @@ nav a:hover{
 }
 
 /*
-   O logótipo fica integrado no fundo da primeira área,
-   atrás do conteúdo principal.
+   Logotipo visual integrado no fundo do Hero.
+   Fica atrás do conteúdo principal.
 */
 
 .hero-secondary-logo{
   position:absolute;
-  z-index:1;
+  z-index:2;
   left:43%;
   top:53%;
   transform:translate(-50%,-50%);
   width:min(47vw,560px);
   max-height:72vh;
   object-fit:contain;
-  opacity:.13;
+  opacity:.15;
   filter:grayscale(100%) contrast(1.25);
   pointer-events:none;
   user-select:none;
@@ -211,7 +209,7 @@ nav a:hover{
   content:"";
   position:absolute;
   inset:0;
-  z-index:2;
+  z-index:1;
   pointer-events:none;
   background:
     linear-gradient(
@@ -324,7 +322,6 @@ nav a:hover{
   font-weight:700;
 }
 
-
 /* =====================================================
    INTRO
 ===================================================== */
@@ -375,7 +372,6 @@ nav a:hover{
   font-weight:500;
 }
 
-
 /* =====================================================
    SECTION
 ===================================================== */
@@ -415,7 +411,6 @@ nav a:hover{
   line-height:1.9;
   font-weight:500;
 }
-
 
 /* =====================================================
    SERVIÇOS
@@ -515,9 +510,8 @@ nav a:hover{
   font-weight:500;
 }
 
-
 /* =====================================================
-   CORTES AFRO / AMERICANOS
+   CORTES
 ===================================================== */
 
 .cut-types{
@@ -586,7 +580,6 @@ nav a:hover{
   margin-top:12px;
   font-weight:500;
 }
-
 
 /* =====================================================
    PREÇÁRIO
@@ -670,7 +663,6 @@ nav a:hover{
   font-size:10px;
   line-height:1.6;
 }
-
 
 /* =====================================================
    SOBRE
@@ -761,6 +753,13 @@ nav a:hover{
   font-weight:800;
 }
 
+/* =====================================================
+   ACABAMENTOS
+===================================================== */
+
+.finishing{
+  background:#0b0b0b;
+}
 
 /* =====================================================
    GALERIA
@@ -781,10 +780,6 @@ nav a:hover{
   position:relative;
   overflow:hidden;
   background:#111;
-}
-
-.gallery-item:first-child{
-  grid-row:span 2;
 }
 
 .gallery-item img{
@@ -818,7 +813,6 @@ nav a:hover{
   text-transform:uppercase;
   font-weight:900;
 }
-
 
 /* =====================================================
    FRASE
@@ -855,7 +849,6 @@ nav a:hover{
   text-transform:uppercase;
   font-weight:800;
 }
-
 
 /* =====================================================
    LOCALIZAÇÃO
@@ -918,7 +911,6 @@ nav a:hover{
   font-weight:800;
 }
 
-
 /* =====================================================
    HORÁRIO
 ===================================================== */
@@ -977,7 +969,6 @@ nav a:hover{
   font-weight:900;
 }
 
-
 /* =====================================================
    CTA FINAL
 ===================================================== */
@@ -1024,7 +1015,6 @@ nav a:hover{
   color:var(--gold);
 }
 
-
 /* =====================================================
    FOOTER
 ===================================================== */
@@ -1059,7 +1049,6 @@ footer{
   font-weight:600;
 }
 
-
 /* =====================================================
    WHATSAPP
 ===================================================== */
@@ -1090,7 +1079,6 @@ footer{
   fill:white;
 }
 
-
 /* =====================================================
    MOBILE
 ===================================================== */
@@ -1109,7 +1097,7 @@ footer{
     left:50%;
     top:50%;
     width:min(78vw,500px);
-    opacity:.11;
+    opacity:.12;
   }
 
   .hero:after{
@@ -1195,10 +1183,6 @@ footer{
     grid-template-rows:220px 220px 220px;
   }
 
-  .gallery-item:first-child{
-    grid-row:span 2;
-  }
-
   .location-grid{
     grid-template-columns:1fr;
   }
@@ -1213,7 +1197,6 @@ footer{
   }
 
 }
-
 
 /* =====================================================
    MOBILE PEQUENO
@@ -1278,8 +1261,7 @@ footer{
     grid-template-rows:auto;
   }
 
-  .gallery-item,
-  .gallery-item:first-child{
+  .gallery-item{
     height:300px;
     grid-row:auto;
   }
@@ -1332,7 +1314,6 @@ footer{
 
 }
 
-
 /* =====================================================
    REDUÇÃO DE MOVIMENTO
 ===================================================== */
@@ -1355,9 +1336,7 @@ footer{
 </style>
 </head>
 
-
 <body>
-
 
 <!-- =====================================================
      HEADER
@@ -1380,19 +1359,13 @@ CLAUDE <span>BROKA</span>
 
 </a>
 
-
 <nav>
 
 <a href="#inicio">Início</a>
-
 <a href="#servicos">Serviços</a>
-
 <a href="#cortes">Cortes</a>
-
 <a href="#precos">Preçário</a>
-
 <a href="#galeria">Galeria</a>
-
 <a href="#contacto">Contacto</a>
 
 <a
@@ -1411,16 +1384,11 @@ Agendar
 
 </header>
 
-
-
 <!-- =====================================================
      HERO
 ===================================================== -->
 
 <section class="hero" id="inicio">
-
-
-<!-- LOGÓTIPO AO FUNDO -->
 
 <img
 src="logotipo secundário.jpg"
@@ -1428,47 +1396,33 @@ alt=""
 aria-hidden="true"
 class="hero-secondary-logo">
 
-
 <div class="hero-number">
 Luanda • Angola
 </div>
-
 
 <div class="container">
 
 <div class="hero-content">
 
-
 <div class="kicker">
 Claude Broka Barbershop
 </div>
 
-
 <h1>
-
 Define<br>
-
 <span>o Teu</span><br>
-
 Estilo
-
 </h1>
-
 
 <div class="hero-line"></div>
 
-
 <p>
-
 Cortamos todo tipo de cabelos e fazemos todo tipo de cortes,
 do mais simples ao mais complicado.
 Aqui deixamos-te na régua, no verdadeiro sentido da palavra.
-
 </p>
 
-
 <div class="hero-buttons">
-
 
 <a
 href="https://wa.me/244933206527?text=Ol%C3%A1%2C%20Claude%20Broka%21%20%F0%9F%91%8B%20Gostaria%20de%20agendar%20um%20atendimento.%20Podem%20informar%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20e%20ajudar-me%20a%20escolher%20o%20melhor%20hor%C3%A1rio%3F%20Quero%20sair%20da%C3%AD%20com%20o%20visual%20na%20r%C3%A9gua%21%20%F0%9F%94%A5"
@@ -1480,7 +1434,6 @@ Agendar pelo WhatsApp
 
 </a>
 
-
 <a
 href="#precos"
 class="btn btn-dark">
@@ -1489,7 +1442,6 @@ Ver Preçário
 
 </a>
 
-
 </div>
 
 </div>
@@ -1497,8 +1449,6 @@ Ver Preçário
 </div>
 
 </section>
-
-
 
 <!-- =====================================================
      INTRO
@@ -1509,7 +1459,6 @@ Ver Preçário
 <div class="container">
 
 <div class="intro-grid">
-
 
 <div class="intro-item">
 
@@ -1527,7 +1476,6 @@ Estilo, criatividade e precisão.
 
 </div>
 
-
 <div class="intro-item">
 
 <div class="intro-number">
@@ -1543,7 +1491,6 @@ Acabamentos modernos e marcantes.
 </p>
 
 </div>
-
 
 <div class="intro-item">
 
@@ -1561,14 +1508,11 @@ Detalhes que fazem a diferença.
 
 </div>
 
-
 </div>
 
 </div>
 
 </section>
-
-
 
 <!-- =====================================================
      SERVIÇOS
@@ -1577,7 +1521,6 @@ Detalhes que fazem a diferença.
 <section class="section services" id="servicos">
 
 <div class="container">
-
 
 <div class="section-header">
 
@@ -1593,54 +1536,39 @@ O teu<br>estilo.
 
 </div>
 
-
 <p class="section-description">
-
 Do corte à barba, da laminagem à pintura,
 a Claude Broka oferece diferentes serviços
 para completar o teu visual.
-
 </p>
 
 </div>
 
-
-
 <div class="service-layout">
-
 
 <div class="service-main">
 
 <div class="service-main-content">
 
-
 <div class="section-label">
 01 / Destaque
 </div>
-
 
 <h3>
 Corte<br>
 Masculino
 </h3>
 
-
 <p>
-
 Cortes afro, cortes americanos e diversos
 acabamentos para deixar-te na régua.
-
 </p>
 
-
 </div>
 
 </div>
-
-
 
 <div class="service-list">
-
 
 <div class="service-card">
 
@@ -1653,15 +1581,11 @@ Barba
 </h3>
 
 <p>
-
 Depilador, máquina, gellete, pintura
 e combinações completas.
-
 </p>
 
 </div>
-
-
 
 <div class="service-card">
 
@@ -1674,15 +1598,11 @@ Laminagem
 </h3>
 
 <p>
-
 Laminagem e laminagem com barba
 para um acabamento definido.
-
 </p>
 
 </div>
-
-
 
 <div class="service-card">
 
@@ -1695,14 +1615,11 @@ Pinturas
 </h3>
 
 <p>
-
 Pintura preta e loira para cabelos
 curtos, médios e longos.
-
 </p>
 
 </div>
-
 
 </div>
 
@@ -1712,8 +1629,6 @@ curtos, médios e longos.
 
 </section>
 
-
-
 <!-- =====================================================
      CORTES
 ===================================================== -->
@@ -1721,7 +1636,6 @@ curtos, médios e longos.
 <section class="section cut-types" id="cortes">
 
 <div class="container">
-
 
 <div class="section-header">
 
@@ -1737,21 +1651,15 @@ Afro &<br>Americanos.
 
 </div>
 
-
 <p class="section-description">
-
 Organizamos os principais estilos em duas
 categorias para facilitar a escolha do
 cliente antes de chegar à cadeira.
-
 </p>
 
 </div>
 
-
-
 <div class="cut-grid">
-
 
 <div class="cut-card">
 
@@ -1760,33 +1668,26 @@ src="corte.jpg"
 alt="Cortes afro na Claude Broka Barbershop"
 loading="lazy">
 
-
 <div class="cut-overlay">
 
 <div class="cut-number">
 01 / Afro
 </div>
 
-
 <h3>
 Cortes<br>
 Afro
 </h3>
 
-
 <p>
-
 Cortes afro com personalidade, criatividade
 e acabamento preciso. Do simples ao mais
 elaborado.
-
 </p>
 
 </div>
 
 </div>
-
-
 
 <div class="cut-card">
 
@@ -1795,40 +1696,32 @@ src="corte1.jpg"
 alt="Cortes americanos na Claude Broka Barbershop"
 loading="lazy">
 
-
 <div class="cut-overlay">
 
 <div class="cut-number">
 02 / Americanos
 </div>
 
-
 <h3>
 Cortes<br>
 Americanos
 </h3>
 
-
 <p>
-
 Estilos modernos, linhas definidas e
 acabamentos inspirados na barbearia
 americana.
-
 </p>
 
 </div>
 
 </div>
 
-
 </div>
 
 </div>
 
 </section>
-
-
 
 <!-- =====================================================
      PREÇÁRIO
@@ -1837,7 +1730,6 @@ americana.
 <section class="section pricing" id="precos">
 
 <div class="container">
-
 
 <div class="section-header">
 
@@ -1854,14 +1746,15 @@ o serviço.
 
 </div>
 
+<p class="section-description">
+Conhece os nossos serviços, escolhe a opção
+que melhor combina com o teu estilo e prepara-te
+para sair da cadeira na régua.
+</p>
+
 </div>
 
-
-
 <div class="price-categories">
-
-
-<!-- BARBA -->
 
 <div class="price-category">
 
@@ -1877,7 +1770,6 @@ Barba
 
 </div>
 
-
 <div class="price-row">
 <span class="price-name">
 Com depilador
@@ -1887,7 +1779,6 @@ Com depilador
 3.000 Kz
 </span>
 </div>
-
 
 <div class="price-row">
 <span class="price-name">
@@ -1899,7 +1790,6 @@ Com máquina
 </span>
 </div>
 
-
 <div class="price-row">
 <span class="price-name">
 Com gellete
@@ -1910,7 +1800,6 @@ Com gellete
 </span>
 </div>
 
-
 <div class="price-row">
 <span class="price-name">
 Com pintura
@@ -1920,7 +1809,6 @@ Com pintura
 2.500 Kz
 </span>
 </div>
-
 
 <div class="price-row">
 <span class="price-name">
@@ -1933,10 +1821,6 @@ Com pintura + desfriso
 </div>
 
 </div>
-
-
-
-<!-- CRIANÇA -->
 
 <div class="price-category">
 
@@ -1952,7 +1836,6 @@ Criança
 
 </div>
 
-
 <div class="price-row">
 
 <span class="price-name">
@@ -1965,7 +1848,6 @@ Corte
 
 </div>
 
-
 <div class="price-row">
 
 <span class="price-name">
@@ -1977,7 +1859,6 @@ Corte com grafite
 </span>
 
 </div>
-
 
 <div class="price-row">
 
@@ -1993,10 +1874,6 @@ Corte + pintura
 
 </div>
 
-
-
-<!-- ADULTO -->
-
 <div class="price-category full">
 
 <div class="price-category-title">
@@ -2011,9 +1888,7 @@ Adulto
 
 </div>
 
-
 <div class="price-row">
-
 <span class="price-name">
 Corte
 </span>
@@ -2021,12 +1896,9 @@ Corte
 <span class="price">
 3.000 Kz
 </span>
-
 </div>
 
-
 <div class="price-row">
-
 <span class="price-name">
 Careca
 </span>
@@ -2034,12 +1906,9 @@ Careca
 <span class="price">
 3.000 Kz
 </span>
-
 </div>
 
-
 <div class="price-row">
-
 <span class="price-name">
 Corte e barba
 </span>
@@ -2047,12 +1916,9 @@ Corte e barba
 <span class="price">
 4.000 Kz
 </span>
-
 </div>
 
-
 <div class="price-row">
-
 <span class="price-name">
 Careca com depilador
 </span>
@@ -2060,12 +1926,9 @@ Careca com depilador
 <span class="price">
 8.000 Kz
 </span>
-
 </div>
 
-
 <div class="price-row">
-
 <span class="price-name">
 Corte, barba e pintura na barba
 </span>
@@ -2073,12 +1936,9 @@ Corte, barba e pintura na barba
 <span class="price">
 5.000 Kz
 </span>
-
 </div>
 
-
 <div class="price-row">
-
 <span class="price-name">
 Corte, barba e desfriso na barba
 </span>
@@ -2086,12 +1946,9 @@ Corte, barba e desfriso na barba
 <span class="price">
 5.000 Kz
 </span>
-
 </div>
 
-
 <div class="price-row">
-
 <span class="price-name">
 Corte, barba, desfriso e pintura na barba
 </span>
@@ -2099,12 +1956,9 @@ Corte, barba, desfriso e pintura na barba
 <span class="price">
 6.000 Kz
 </span>
-
 </div>
 
-
 <div class="price-row">
-
 <span class="price-name">
 Corte, barba e pintura preta
 </span>
@@ -2112,12 +1966,9 @@ Corte, barba e pintura preta
 <span class="price">
 5.000 Kz
 </span>
-
 </div>
 
-
 <div class="price-row">
-
 <span class="price-name">
 Corte, barba, desfriso e pintura preta
 </span>
@@ -2125,14 +1976,9 @@ Corte, barba, desfriso e pintura preta
 <span class="price">
 6.000 Kz
 </span>
-
 </div>
 
 </div>
-
-
-
-<!-- LINE UP -->
 
 <div class="price-category">
 
@@ -2148,7 +1994,6 @@ Line Up
 
 </div>
 
-
 <div class="price-row">
 
 <span class="price-name">
@@ -2160,7 +2005,6 @@ Laminagem
 </span>
 
 </div>
-
 
 <div class="price-row">
 
@@ -2176,10 +2020,6 @@ Laminagem e barba
 
 </div>
 
-
-
-<!-- SOBRANCELHAS -->
-
 <div class="price-category">
 
 <div class="price-category-title">
@@ -2193,7 +2033,6 @@ Sobrancelhas
 </span>
 
 </div>
-
 
 <div class="price-row">
 
@@ -2209,10 +2048,6 @@ Com e sem pintura
 
 </div>
 
-
-
-<!-- PINTURA PRETA -->
-
 <div class="price-category">
 
 <div class="price-category-title">
@@ -2227,7 +2062,6 @@ Pintura Preta
 
 </div>
 
-
 <div class="price-row">
 
 <span class="price-name">
@@ -2240,7 +2074,6 @@ Cabelos curtos
 
 </div>
 
-
 <div class="price-row">
 
 <span class="price-name">
@@ -2252,7 +2085,6 @@ Cabelos médios
 </span>
 
 </div>
-
 
 <div class="price-row">
 
@@ -2268,10 +2100,6 @@ Cabelos longos
 
 </div>
 
-
-
-<!-- PINTURA LOIRA -->
-
 <div class="price-category">
 
 <div class="price-category-title">
@@ -2286,7 +2114,6 @@ Pintura Loira
 
 </div>
 
-
 <div class="price-row">
 
 <span class="price-name">
@@ -2299,7 +2126,6 @@ Cabelos curtos
 
 </div>
 
-
 <div class="price-row">
 
 <span class="price-name">
@@ -2311,7 +2137,6 @@ Cabelos médios
 </span>
 
 </div>
-
 
 <div class="price-row">
 
@@ -2327,14 +2152,11 @@ Cabelos longos
 
 </div>
 
-
 </div>
 
 </div>
 
 </section>
-
-
 
 <!-- =====================================================
      SOBRE
@@ -2344,9 +2166,7 @@ Cabelos longos
 
 <div class="container">
 
-
 <div class="about-grid">
-
 
 <div class="about-image">
 
@@ -2354,7 +2174,6 @@ Cabelos longos
 src="cliente1.jpg"
 alt="Cliente da Claude Broka Barbershop"
 loading="lazy">
-
 
 <div class="about-image-box">
 
@@ -2370,73 +2189,51 @@ Claude Broka
 
 </div>
 
-
-
 <div class="about-text">
 
 <div class="section-label">
 04 — A nossa essência
 </div>
 
-
 <div class="big">
-
 Não é apenas<br>
-
 um <span>corte.</span>
-
 </div>
 
-
 <p>
-
 Na Claude Broka Barbershop, cada corte é pensado
 para valorizar o teu estilo e a tua personalidade.
-
 </p>
 
-
 <p>
-
 Trabalhamos com diferentes tipos de cabelos e
 diferentes estilos de corte, desde os mais simples
 até aos mais elaborados.
-
 </p>
-
 
 <p>
-
 Aqui, o objetivo é simples: fazer com que saias
 da cadeira com confiança e com o visual na régua.
-
 </p>
 
-
-
 <div class="about-points">
-
 
 <div class="about-point">
 ✦ Cortes Afro
 </div>
 
-
 <div class="about-point">
 ✦ Cortes Americanos
 </div>
-
 
 <div class="about-point">
 ✦ Barba
 </div>
 
-
 <div class="about-point">
 ✦ Pintura
 </div>
 
-
 </div>
 
 </div>
@@ -2447,174 +2244,21 @@ da cadeira com confiança e com o visual na régua.
 
 </section>
 
-
-
 <!-- =====================================================
-     GALERIA
+     ACABAMENTOS — ANTES DA GALERIA
 ===================================================== -->
 
-<section class="section gallery" id="galeria">
+<section class="section finishing" id="acabamentos">
 
 <div class="container">
-
 
 <div class="section-header">
 
 <div>
 
 <div class="section-label">
-06 — Galeria
+06 — Acabamentos
 </div>
-
-
-<h2 class="section-title">
-O<br>
-Visual.
-</h2>
-
-</div>
-
-
-<p class="section-description">
-
-Inspira-te em alguns dos nossos cortes,
-acabamentos e transformações. Cada trabalho
-é feito com atenção ao detalhe para deixar
-o teu visual na régua.
-
-</p>
-
-</div>
-
-
-
-<div class="gallery-grid">
-
-
-<div class="gallery-item">
-
-<img
-src="cliente2.jpg"
-alt="Visual de cliente da Claude Broka Barbershop"
-loading="lazy">
-
-
-<div class="gallery-overlay">
-
-<span>
-Visual na Régua
-</span>
-
-</div>
-
-</div>
-
-
-
-<div class="gallery-item">
-
-<img
-src="cliente3.jpg"
-alt="Corte com precisão na Claude Broka Barbershop"
-loading="lazy">
-
-
-<div class="gallery-overlay">
-
-<span>
-Corte com Precisão
-</span>
-
-</div>
-
-</div>
-
-
-
-<div class="gallery-item">
-
-<img
-src="cliente.jpg"
-alt="Estilo masculino na Claude Broka Barbershop"
-loading="lazy">
-
-
-<div class="gallery-overlay">
-
-<span>
-Estilo & Presença
-</span>
-
-</div>
-
-</div>
-
-
-
-<div class="gallery-item">
-
-<img
-src="corte completo1.jpg"
-alt="Corte completo na Claude Broka Barbershop"
-loading="lazy">
-
-
-<div class="gallery-overlay">
-
-<span>
-Corte Completo
-</span>
-
-</div>
-
-</div>
-
-
-
-<div class="gallery-item">
-
-<img
-src="barba.jpg"
-alt="Barba definida na Claude Broka Barbershop"
-loading="lazy">
-
-
-<div class="gallery-overlay">
-
-<span>
-Barba Definida
-</span>
-
-</div>
-
-</div>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- =====================================================
-     ACABAMENTOS
-===================================================== -->
-
-<section class="section gallery">
-
-<div class="container">
-
-
-<div class="section-header">
-
-<div>
-
-<div class="section-label">
-07 — Acabamentos
-</div>
-
 
 <h2 class="section-title">
 Detalhes<br>
@@ -2623,21 +2267,15 @@ na régua.
 
 </div>
 
-
 <p class="section-description">
-
 Do primeiro detalhe ao acabamento final,
 cada serviço é pensado para completar
 o teu visual e reforçar a tua presença.
-
 </p>
 
 </div>
 
-
-
 <div class="gallery-grid">
-
 
 <div class="gallery-item">
 
@@ -2645,7 +2283,6 @@ o teu visual e reforçar a tua presença.
 src="pintura.jpg"
 alt="Pintura de cabelo e barba na Claude Broka Barbershop"
 loading="lazy">
-
 
 <div class="gallery-overlay">
 
@@ -2657,15 +2294,12 @@ Pintura
 
 </div>
 
-
-
 <div class="gallery-item">
 
 <img
 src="laminagem.jpg"
 alt="Laminagem na Claude Broka Barbershop"
 loading="lazy">
-
 
 <div class="gallery-overlay">
 
@@ -2677,15 +2311,12 @@ Laminagem
 
 </div>
 
-
-
 <div class="gallery-item">
 
 <img
 src="laminagem1.jpg"
 alt="Line Up e acabamento na Claude Broka Barbershop"
 loading="lazy">
-
 
 <div class="gallery-overlay">
 
@@ -2697,15 +2328,12 @@ Line Up
 
 </div>
 
-
-
 <div class="gallery-item">
 
 <img
 src="corte completo.jpg"
 alt="Corte completo na Claude Broka Barbershop"
 loading="lazy">
-
 
 <div class="gallery-overlay">
 
@@ -2717,15 +2345,12 @@ Corte Completo
 
 </div>
 
-
-
 <div class="gallery-item">
 
 <img
 src="cliente5.jpg"
 alt="Resultado final de cliente da Claude Broka Barbershop"
 loading="lazy">
-
 
 <div class="gallery-overlay">
 
@@ -2737,14 +2362,165 @@ Resultado Final
 
 </div>
 
-
 </div>
 
 </div>
 
 </section>
 
+<!-- =====================================================
+     GALERIA
+===================================================== -->
 
+<section class="section gallery" id="galeria">
+
+<div class="container">
+
+<div class="section-header">
+
+<div>
+
+<div class="section-label">
+07 — Galeria
+</div>
+
+<h2 class="section-title">
+O<br>
+Visual.
+</h2>
+
+</div>
+
+<p class="section-description">
+Inspira-te em alguns dos nossos cortes,
+acabamentos e transformações. Cada trabalho
+é feito com atenção ao detalhe para deixar
+o teu visual na régua.
+</p>
+
+</div>
+
+<div class="gallery-grid">
+
+<!-- CLIENTE 1 -->
+
+<div class="gallery-item">
+
+<img
+src="cliente1.jpg"
+alt="Cliente com corte masculino na Claude Broka Barbershop"
+loading="lazy">
+
+<div class="gallery-overlay">
+
+<span>
+Estilo na Régua
+</span>
+
+</div>
+
+</div>
+
+<!-- CLIENTE 2 -->
+
+<div class="gallery-item">
+
+<img
+src="cliente2.jpg"
+alt="Visual de cliente da Claude Broka Barbershop"
+loading="lazy">
+
+<div class="gallery-overlay">
+
+<span>
+Visual na Régua
+</span>
+
+</div>
+
+</div>
+
+<!-- CLIENTE 3 -->
+
+<div class="gallery-item">
+
+<img
+src="cliente3.jpg"
+alt="Corte com precisão na Claude Broka Barbershop"
+loading="lazy">
+
+<div class="gallery-overlay">
+
+<span>
+Corte com Precisão
+</span>
+
+</div>
+
+</div>
+
+<!-- CLIENTE -->
+
+<div class="gallery-item">
+
+<img
+src="cliente.jpg"
+alt="Estilo masculino na Claude Broka Barbershop"
+loading="lazy">
+
+<div class="gallery-overlay">
+
+<span>
+Estilo &amp; Presença
+</span>
+
+</div>
+
+</div>
+
+<!-- CORTE COMPLETO -->
+
+<div class="gallery-item">
+
+<img
+src="corte completo1.jpg"
+alt="Corte completo na Claude Broka Barbershop"
+loading="lazy">
+
+<div class="gallery-overlay">
+
+<span>
+Corte Completo
+</span>
+
+</div>
+
+</div>
+
+<!-- BARBA -->
+
+<div class="gallery-item">
+
+<img
+src="barba.jpg"
+alt="Barba definida na Claude Broka Barbershop"
+loading="lazy">
+
+<div class="gallery-overlay">
+
+<span>
+Barba Definida
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
 
 <!-- =====================================================
      FRASE
@@ -2754,30 +2530,22 @@ Resultado Final
 
 <div class="container">
 
-
 <div class="quote-mark">
 “
 </div>
 
-
 <h2>
-
 Aqui deixamos-te na régua,
 no verdadeiro sentido da palavra.
-
 </h2>
-
 
 <p>
 Claude Broka Barbershop • Luanda
 </p>
 
-
 </div>
 
 </section>
-
-
 
 <!-- =====================================================
      HORÁRIO
@@ -2787,9 +2555,7 @@ Claude Broka Barbershop • Luanda
 
 <div class="container">
 
-
 <div class="hours-box">
-
 
 <div class="hours-title">
 
@@ -2797,11 +2563,9 @@ Claude Broka Barbershop • Luanda
 08 — Funcionamento
 </div>
 
-
 <h3>
 Estamos à tua espera.
 </h3>
-
 
 <p>
 De segunda a domingo, das 08h às 20h.
@@ -2809,105 +2573,46 @@ De segunda a domingo, das 08h às 20h.
 
 </div>
 
-
 <div class="hour-row">
-
-<span>
-Segunda-feira
-</span>
-
-<span>
-08:00 — 20:00
-</span>
-
+<span>Segunda-feira</span>
+<span>08:00 — 20:00</span>
 </div>
 
-
 <div class="hour-row">
-
-<span>
-Terça-feira
-</span>
-
-<span>
-08:00 — 20:00
-</span>
-
+<span>Terça-feira</span>
+<span>08:00 — 20:00</span>
 </div>
 
-
 <div class="hour-row">
-
-<span>
-Quarta-feira
-</span>
-
-<span>
-08:00 — 20:00
-</span>
-
+<span>Quarta-feira</span>
+<span>08:00 — 20:00</span>
 </div>
 
-
 <div class="hour-row">
-
-<span>
-Quinta-feira
-</span>
-
-<span>
-08:00 — 20:00
-</span>
-
+<span>Quinta-feira</span>
+<span>08:00 — 20:00</span>
 </div>
 
-
 <div class="hour-row">
-
-<span>
-Sexta-feira
-</span>
-
-<span>
-08:00 — 20:00
-</span>
-
+<span>Sexta-feira</span>
+<span>08:00 — 20:00</span>
 </div>
 
-
 <div class="hour-row">
-
-<span>
-Sábado
-</span>
-
-<span>
-08:00 — 20:00
-</span>
-
+<span>Sábado</span>
+<span>08:00 — 20:00</span>
 </div>
 
-
 <div class="hour-row">
-
-<span>
-Domingo
-</span>
-
-<span>
-08:00 — 20:00
-</span>
-
+<span>Domingo</span>
+<span>08:00 — 20:00</span>
 </div>
-
 
 </div>
 
 </div>
 
 </section>
-
-
 
 <!-- =====================================================
      LOCALIZAÇÃO
@@ -2917,7 +2622,6 @@ Domingo
 
 <div class="container">
 
-
 <div class="section-header">
 
 <div>
@@ -2926,7 +2630,6 @@ Domingo
 09 — Visita-nos
 </div>
 
-
 <h2 class="section-title">
 Encontra<br>
 o teu lugar.
@@ -2934,51 +2637,37 @@ o teu lugar.
 
 </div>
 
-
 <p class="section-description">
-
 Estamos na Avenida Deolinda Rodrigues.
 Para marcações e informações, fala diretamente
 connosco pelo WhatsApp.
-
 </p>
 
 </div>
 
-
-
 <div class="location-grid">
 
-
 <div class="location-card">
-
 
 <h3>
 Localização
 </h3>
 
-
 <p>
-
 <strong>
 Avenida Deolinda Rodrigues
 </strong>
-
 </p>
-
 
 <p>
 Rua dos Serviços, antes do supermercado Jumbo.
 </p>
 
-
 <p style="margin-top:15px;">
 Luanda, Angola
 </p>
 
-
 <br>
-
 
 <a
 href="https://www.google.com/maps/search/?api=1&query=Avenida%20Deolinda%20Rodrigues%20Rua%20dos%20Servi%C3%A7os%20Jumbo%20Luanda"
@@ -2990,19 +2679,13 @@ Abrir no Google Maps
 
 </a>
 
-
 </div>
 
-
-
 <div class="location-card">
-
 
 <h3>
 Contacto
 </h3>
-
-
 
 <div class="info-row">
 
@@ -3016,8 +2699,6 @@ WhatsApp
 
 </div>
 
-
-
 <div class="info-row">
 
 <span>
@@ -3029,8 +2710,6 @@ Segunda a Domingo
 </span>
 
 </div>
-
-
 
 <div class="info-row">
 
@@ -3044,134 +2723,7 @@ Horário
 
 </div>
 
-
-
 <div style="margin-top:25px;">
 
-
 <a
-href="https://wa.me/244933206527?text=Ol%C3%A1%2C%20Claude%20Broka%21%20%F0%9F%91%8B%20Gostaria%20de%20agendar%20um%20atendimento.%20Podem%20informar%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20e%20ajudar-me%20a%20escolher%20o%20melhor%20hor%C3%A1rio%3F%20Quero%20sair%20da%C3%AD%20com%20o%20visual%20na%20r%C3%A9gua%21%20%F0%9F%94%A5"
-target="_blank"
-rel="noopener"
-class="btn btn-gold">
-
-Falar no WhatsApp
-
-</a>
-
-
-</div>
-
-
-</div>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- =====================================================
-     CTA FINAL
-===================================================== -->
-
-<section class="final-cta">
-
-<div class="container final-content">
-
-
-<div class="small">
-Claude Broka Barbershop
-</div>
-
-
-<h2>
-
-Marca<br>
-
-<span>agora.</span>
-
-</h2>
-
-
-<a
-href="https://wa.me/244933206527?text=Ol%C3%A1%2C%20Claude%20Broka%21%20%F0%9F%91%8B%20Quero%20marcar%20o%20meu%20atendimento.%20Podem%20enviar-me%20os%20hor%C3%A1rios%20dispon%C3%ADveis%3F%20Quero%20reservar%20o%20meu%20lugar%20e%20deixar%20o%20visual%20na%20r%C3%A9gua%21%20%F0%9F%94%A5"
-target="_blank"
-rel="noopener"
-class="btn btn-gold">
-
-Agendar pelo WhatsApp
-
-</a>
-
-
-</div>
-
-</section>
-
-
-
-<!-- =====================================================
-     FOOTER
-===================================================== -->
-
-<footer>
-
-<div class="container footer-grid">
-
-
-<div class="footer-brand">
-
-CLAUDE <span>BROKA</span>
-
-</div>
-
-
-<div class="footer-text">
-
-Claude Broka Barbershop • Luanda, Angola<br>
-
-Avenida Deolinda Rodrigues • Rua dos Serviços<br>
-
-+244 933 206 527<br>
-
-© 2026 Claude Broka Barbershop
-
-</div>
-
-
-</div>
-
-</footer>
-
-
-
-<!-- =====================================================
-     WHATSAPP FLUTUANTE
-===================================================== -->
-
-<a
-href="https://wa.me/244933206527?text=Ol%C3%A1%2C%20Claude%20Broka%21%20%F0%9F%91%8B%20Gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20e%20agendar%20um%20atendimento.%20Podem%20ajudar-me%3F%20Quero%20deixar%20o%20visual%20na%20r%C3%A9gua%21%20%F0%9F%94%A5"
-target="_blank"
-rel="noopener"
-class="whatsapp"
-aria-label="Falar com Claude Broka pelo WhatsApp"
-title="Falar com Claude Broka pelo WhatsApp">
-
-
-<svg
-viewBox="0 0 24 24"
-aria-hidden="true">
-
-<path d="M20.52 3.48A11.86 11.86 0 0 0 12.06 0C5.5 0 .16 5.34.16 11.9c0 2.1.55 4.15 1.6 5.96L.05 24l6.28-1.65a11.9 11.9 0 0 0 5.73 1.46h.01c6.55 0 11.89-5.34 11.89-11.9 0-3.18-1.24-6.17-3.44-8.43ZM12.06 21.8h-.01a9.88 9.88 0 0 1-5.03-1.38l-.36-.21-3.73.98.99-3.64-.23-.37a9.87 9.87 0 0 1-1.51-5.28C2.18 6.45 6.61 2.02 12.07 2.02c2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 7c0 5.45-4.43 9.88-9.89 9.88Zm5.42-7.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.74-1.64-2.04-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.21 5.09 4.5.71.31 1.26.49 1.69.63.71.23 1.35.2 1.86.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35Z"/>
-
-</svg>
-
-</a>
-
-
-</body>
-</html>
+href="https://wa.me/244933206527?text=Ol%C3%A1%2C%20Claude%20Broka%21%20%F0%9F%91%8B%20Gostaria%20de%20agendar%20um%20atendimento.%20Podem%20informar%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20e%20ajudar-me%20a%20escolher%20o%20melhor%20hor%C3%A1rio%3F%20Quero%20sair%20da%C3%AD%20com%20o%20visual%20na%20r%C3%A9gua%21%20%
