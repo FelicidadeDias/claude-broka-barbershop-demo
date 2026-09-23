@@ -754,44 +754,31 @@ nav a:hover{
   align-items:center;
 }
 
+/* Área da imagem principal */
+
 .about-image{
   height:600px;
   position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  background:#050505;
 }
+
+/* Logotipo principal substitui toda a composição anterior */
 
 .about-image img{
-  width:88%;
+  width:100%;
   height:100%;
-  object-fit:cover;
-  filter:grayscale(15%);
+  object-fit:contain;
+  object-position:center;
+  filter:none;
 }
 
-.about-image-box{
-  position:absolute;
-  right:0;
-  bottom:30px;
-  width:180px;
-  height:180px;
-  background:var(--gold);
-  color:#050505;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  padding:20px;
-}
-
-.about-image-box strong{
-  font-family:'Bebas Neue',sans-serif;
-  font-size:60px;
-  line-height:.8;
-}
-
-.about-image-box span{
-  font-size:10px;
-  text-transform:uppercase;
-  font-weight:900;
-  margin-top:12px;
-}
+/* =====================================================
+   TEXTO SOBRE
+===================================================== */
 
 .about-text .big{
   font-family:'Bebas Neue',sans-serif;
@@ -1828,7 +1815,6 @@ para sair da cadeira na régua.
 
 <div class="price-categories">
 
-
 <div class="price-category">
 
 <div class="price-category-title">
@@ -2223,21 +2209,9 @@ Cabelos longos
 <div class="about-image">
 
 <img
-src="logotipo secundário.jpg"
-alt="Claude Broka Barbershop"
+src="logotipo principal.jpg"
+alt="Logotipo principal da Claude Broka Barbershop"
 loading="lazy">
-
-<div class="about-image-box">
-
-<strong>
-CB
-</strong>
-
-<span>
-Claude Broka
-</span>
-
-</div>
 
 </div>
 
@@ -2463,9 +2437,6 @@ o teu visual na régua.
 
 <div class="gallery-grid">
 
-
-<!-- LOGOTIPO SECUNDÁRIO -->
-
 <div class="gallery-item">
 
 <img
@@ -2483,8 +2454,6 @@ Identidade Claude Broka
 
 </div>
 
-
-<!-- CLIENTE 2 -->
 
 <div class="gallery-item">
 
@@ -2504,8 +2473,6 @@ Visual na Régua
 </div>
 
 
-<!-- CLIENTE 3 -->
-
 <div class="gallery-item">
 
 <img
@@ -2523,8 +2490,6 @@ Corte com Precisão
 
 </div>
 
-
-<!-- CLIENTE -->
 
 <div class="gallery-item">
 
@@ -2544,8 +2509,6 @@ Estilo &amp; Presença
 </div>
 
 
-<!-- CORTE COMPLETO -->
-
 <div class="gallery-item">
 
 <img
@@ -2563,8 +2526,6 @@ Corte Completo
 
 </div>
 
-
-<!-- BARBA -->
 
 <div class="gallery-item">
 
